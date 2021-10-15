@@ -7,6 +7,11 @@ import SignIn from './components/auth/SignIn'
 import SignUp from './components/auth/SignUp'
 import CreateProject from './components/projects/CreateProject'
 import test from './components/test'
+import test2 from './components/test2'
+import test3 from './components/test3'
+import ProjectList from './components/projects/ProjectList'
+import loginp from './components/patient/loginp'
+
 class App extends Component {
   render() {
     return (
@@ -20,6 +25,14 @@ class App extends Component {
             <Route path='/signup' component={SignUp} />
             <Route path='/create' component={CreateProject} />
             <Route path='/test' component={test} />
+            <Route path='/test2' component={test2} />
+            <Route path='/test3' component={test3} />
+            <Route path='/loginp' component={loginp} />
+
+            <Route path='/project' component={ProjectList} />
+
+       
+
           </Switch>
         </div>
       </BrowserRouter>

@@ -19,12 +19,12 @@ class SignIn extends Component {
   }
   render() {
     const { authError, auth } = this.props;
-    if (auth.uid) {return <Redirect to='/test' />}
+    if (auth.uid) {return <Redirect to='/Request' />}
 
     return (
       <div className="container">
         <form className="white" onSubmit={this.handleSubmit}>
-          <h5 className="grey-text text-darken-3">Sign In</h5>
+          <h5 className="grey-text text-darken-3">Login</h5>
           <div className="input-field">
             <label htmlFor="email">Email</label>
             <input type="email" id='email' onChange={this.handleChange} />

@@ -4,7 +4,8 @@ export const signIn = (credentials) => {
     
     firebase.auth().signInWithEmailAndPassword(
       credentials.email,
-      credentials.password
+      credentials.password,
+      
     ).then(() => {
       dispatch({ type: 'LOGIN_SUCCESS' });
     }).catch((err) => {
@@ -32,8 +33,9 @@ export const signUp = (newUser) => {
     firebase.auth().createUserWithEmailAndPassword(
       newUser.email, 
       newUser.password
+
     ).then(resp => {
-      return firestore.collection('users').doc(resp.user.uid).set({
+      return firestore.collection('Voluteer').doc(resp.user.uid).set({
         firstName: newUser.firstName,
         lastName: newUser.lastName,
         initials: newUser.firstName[0] + newUser.lastName[0]
@@ -43,5 +45,9 @@ export const signUp = (newUser) => {
     }).catch((err) => {
       dispatch({ type: 'SIGNUP_ERROR', err});
     });
+
+    
+
+  
   }
 }

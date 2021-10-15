@@ -11,7 +11,10 @@ import { Redirect } from 'react-router-dom'
 class Dashboard extends Component {
   render() {
     const { projects, auth, notifications } = this.props;
-    if (!auth.uid) return <Redirect to='/signin' /> 
+
+    if (auth.email != null && auth.phoneNumber == null)  {return < Redirect to='/project' />} 
+    else if (auth.phoneNumber != null && auth.email == null) { return < Redirect to='/test3'/>}
+    else if (auth.phoneNumber == null && auth.email == null) { return < Redirect to='/test'/>}
 
     return (
       <div className="dashboard container">
