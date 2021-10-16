@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import SignedInLinks from './SignedInLinks'
+import Navbar_volunteer from './Navbar_volunteer'
 import SignedOutLinks from './SignedOutLinks'
 import { connect } from 'react-redux'
-import SignInpa from './SignInpa'
+import Navbar_patient from './Navbar_patient'
 
 
 const Navbar = (props) => {
@@ -12,15 +12,15 @@ const Navbar = (props) => {
   let links
   if (auth.email != null && auth.phoneNumber == null) 
   {
-    links = auth.email ? <SignedInLinks profile={profile} /> : <SignedOutLinks />;
+    links = auth.email ? <Navbar_volunteer profile={profile} /> : <SignedOutLinks />;
   } 
   else if (auth.phoneNumber != null && auth.email == null) 
   {
-     links = auth.phoneNumber ? <SignInpa profile={profile} /> : <SignedOutLinks />;
+     links = auth.phoneNumber ? <Navbar_patient profile={profile} /> : <SignedOutLinks />;
   }
   else
   { 
-    links = auth.email ? <SignedInLinks profile={profile} /> : <SignedOutLinks />;
+    links = auth.email ? <Navbar_volunteer profile={profile} /> : <SignedOutLinks />;
 
   }
   return (
@@ -28,7 +28,6 @@ const Navbar = (props) => {
       <div className="container">
         <Link to='/' className="brand-logo">One4All</Link>
         {links}
-       
 
       </div>
     </nav>

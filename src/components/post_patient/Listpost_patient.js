@@ -1,16 +1,16 @@
 import React from 'react'
-import ProjectSummary from './ProjectSummary'
+import Summarypost_patient from './Summarypost_patient'
 import { Link } from 'react-router-dom'
 
 
-const ProjectList = ({projects}) => {
+const Listpost_patient = ({projects}) => {
   
   return (
     <div className="project-list section">
       { projects && projects.map(project => {
         return (
           <Link href={'/project/' + project.id} key={project.id}>
-            <ProjectSummary project={project} />
+            <Summarypost_patient project={project} />
           </Link>
         )
       })}  
@@ -18,4 +18,4 @@ const ProjectList = ({projects}) => {
   )
 }
 
-export default ProjectList
+export default Listpost_patient

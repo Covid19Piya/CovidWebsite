@@ -5,7 +5,7 @@ import { compose } from 'redux'
 import { Redirect } from 'react-router-dom'
 import moment from 'moment'
 
-const ProjectDetails = (props) => {
+const Detailpost_patient = (props) => {
   const { project, auth } = props;
   if (!auth.uid) return <Redirect to='/signin' /> 
   if (project) {
@@ -51,4 +51,4 @@ export default compose(
   firestoreConnect([{
     collection: 'projects'
   }])
-)(ProjectDetails)
+)(Detailpost_patient)

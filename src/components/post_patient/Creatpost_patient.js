@@ -4,7 +4,7 @@ import { createProject } from '../../store/actions/projectActions'
 import { Redirect } from 'react-router-dom'
 import firebase from 'firebase'
 
-class CreateProject extends Component {
+class Creatpost_patient extends Component {
   state = {
     Address: '',
     Age: '',
@@ -41,6 +41,7 @@ class CreateProject extends Component {
       <div className="container">
         <form className="white" onSubmit={this.handleSubmit}>
           <h5 className="grey-text text-darken-3">Need Help Form</h5>
+      
           <div className="input-field">
             <input type="text" id='Name' onChange={this.handleChange} />
             <label htmlFor="title">Name </label>
@@ -86,4 +87,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreateProject)
+export default connect(mapStateToProps, mapDispatchToProps)(Creatpost_patient)

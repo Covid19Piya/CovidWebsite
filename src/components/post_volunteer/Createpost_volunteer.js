@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { createProjectva } from "../../store/actions/projectActionsva";
 import { Redirect } from "react-router-dom";
 
-class CreateProjectva extends Component {
+class Createpost_volunteer extends Component {
     state = {
       title: "",
       content: "",
@@ -98,5 +98,5 @@ class CreateProjectva extends Component {
     };
   };
   
-  export default connect(mapStateToProps, mapDispatchToProps)(CreateProjectva);
+  export default connect(mapStateToProps, mapDispatchToProps)(Createpost_volunteer);
   

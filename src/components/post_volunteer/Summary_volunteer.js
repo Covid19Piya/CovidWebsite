@@ -1,7 +1,7 @@
 import React from 'react'
 import moment from 'moment'
 
-const ProjectSummaryva = ({projectva}) => {
+const Summary_volunteer = ({projectva}) => {
   return (
     <div className="card z-depth-0 project-summary">
       <div className="card-content grey-text text-darken-3">
@@ -13,4 +13,4 @@ const ProjectSummaryva = ({projectva}) => {
   )
 }
 
-export default ProjectSummaryva
+export default Summary_volunteer

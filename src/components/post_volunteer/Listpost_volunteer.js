@@ -1,16 +1,16 @@
 import React from 'react'
-import ProjectSummaryva from './ProjectSummaryva'
+import Summary_volunteer from './ProjectSummaryva'
 import { Link } from 'react-router-dom'
 
 
-const ProjectListva = ({projectsva}) => {
+const Listpost_volunteer = ({projectsva}) => {
   
   return (
     <div className="project-list section">
       { projectsva && projectsva.map(projectva => {
         return (
           <Link href={'/projectva/' + projectva.id} key={projectva.id}>
-            <ProjectSummaryva projectva={projectva} />
+            <Summary_volunteer projectva={projectva} />
           </Link>
         )
       })}  
@@ -18,4 +18,4 @@ const ProjectListva = ({projectsva}) => {
   )
 }
 
-export default ProjectListva
+export default Listpost_volunteer

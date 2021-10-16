@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ProjectList from '../projects/ProjectList'
+import ProjectList from '../post_patient/Listpost_patient'
 import Notifications from './Notifications'
 import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
