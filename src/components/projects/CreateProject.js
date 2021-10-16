@@ -2,11 +2,21 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { createProject } from '../../store/actions/projectActions'
 import { Redirect } from 'react-router-dom'
+import firebase from 'firebase'
 
 class CreateProject extends Component {
   state = {
-    title: '',
-    content: ''
+    Address: '',
+    Age: '',
+    Confirm: '',
+    Help: '',
+    Name: '',
+    PhoneNumber1: '',
+    Request: '',
+    Status: '',
+    gender: '',
+    id: ''
+    
   }
   handleChange = (e) => {
     this.setState({
@@ -15,27 +25,48 @@ class CreateProject extends Component {
   }
   handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(this.state);
     this.props.createProject(this.state);
     this.props.history.push('/');
   }
+
+
+
   render() {
     const { auth } = this.props;
+
+    console.log(auth.phoneNumber)
+    this.state.id = auth.phoneNumber
     if (!auth.uid) return <Redirect to='/signin' /> 
     return (
       <div className="container">
         <form className="white" onSubmit={this.handleSubmit}>
-          <h5 className="grey-text text-darken-3">Create a New Project</h5>
+          <h5 className="grey-text text-darken-3">Need Help Form</h5>
           <div className="input-field">
-            <input type="text" id='title' onChange={this.handleChange} />
-            <label htmlFor="title">Project Title</label>
+            <input type="text" id='Name' onChange={this.handleChange} />
+            <label htmlFor="title">Name </label>
           </div>
           <div className="input-field">
-            <textarea id="content" className="materialize-textarea" onChange={this.handleChange}></textarea>
-            <label htmlFor="content">Project Content</label>
+            <textarea id="Age" className="materialize-textarea" onChange={this.handleChange}></textarea>
+            <label htmlFor="content">Age</label>
           </div>
           <div className="input-field">
-            <button className="btn pink lighten-1">Create</button>
+            <textarea id="gender" className="materialize-textarea" onChange={this.handleChange}></textarea>
+            <label htmlFor="content">gender</label>
+          </div>
+          <div className="input-field">
+            <textarea id="Address" className="materialize-textarea" onChange={this.handleChange}></textarea>
+            <label htmlFor="content">Address</label>
+          </div>
+          <div className="input-field">
+            <textarea id="PhoneNumber1" className="materialize-textarea" onChange={this.handleChange}></textarea>
+            <label htmlFor="content">Phone Number</label>
+          </div>
+          <div className="input-field">
+            <textarea id="Help" className="materialize-textarea" onChange={this.handleChange}></textarea>
+            <label htmlFor="content">Help</label>
+          </div>
+          <div className="input-field">
+            <button className="btn pink lighten-1">Submit</button>
           </div>
         </form>
       </div>

@@ -12,13 +12,9 @@ const Navbarpa = (props) => {
 
 
   return (
-    <nav className="nav-wrapper grey darken-3">
-      <div className="container">
-        <Link to='/' className="brand-logo">One4All</Link>
-        {links2}
+    <nav >
        
 
-      </div>
     </nav>
   )
 }
