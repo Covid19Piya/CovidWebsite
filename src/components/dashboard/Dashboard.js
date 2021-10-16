@@ -5,13 +5,20 @@ import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
 import { Redirect } from 'react-router-dom'
+import firebase from 'firebase'
 
 
 
 class Dashboard extends Component {
   render() {
     const { projects, auth, notifications } = this.props;
-
+    let checkUser = ""
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        checkUser = user.phoneNumber
+        console.log(checkUser)
+      }
+    })
     if (auth.email != null && auth.phoneNumber == null)  {return < Redirect to='/test2' />} 
     else if (auth.phoneNumber != null && auth.email == null) { return < Redirect to='/test3'/>}
     else if (auth.phoneNumber == null && auth.email == null) { return < Redirect to='/test'/>}

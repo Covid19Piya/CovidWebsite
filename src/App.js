@@ -11,7 +11,7 @@ import test from './components/test'
 import test2 from './components/test2'
 import test3 from './components/test3'
 import posthelp from './components/posthelp';
-import seepost from './components/seepost';
+import myCase from './components/seepost';
 import loginp from './components/auth/loginp'
 
 
@@ -32,7 +32,7 @@ class App extends Component {
             <Route path='/test2' component={test2} />
             <Route path='/test3' component={test3} />
             <Route path='/posthelp' component={posthelp} />
-            <Route path='/seepost' component={seepost} />
+            <Route path='/myCase' component={myCase} />
             <Route path='/loginp' component={loginp} />
 
           
