@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-export default class VolunteerLogin extends Component {
+export default class test extends Component {
     render() {
         return ( 
             <div>
-                <h2>Blank page</h2>
+                <h2>Home page</h2>
             </div>
         )
     }

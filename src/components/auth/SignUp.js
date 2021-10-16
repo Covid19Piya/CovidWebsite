@@ -3,6 +3,9 @@ import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { signUp } from '../../store/actions/authActions'
 
+//หน้า สมัคร Volunteer 
+//มีemail password firstname lastname ให้กรอก
+
 class SignUp extends Component {
   state = {
     email: '',
@@ -21,7 +24,7 @@ class SignUp extends Component {
   }
   render() {
     const { auth, authError } = this.props;
-    if (auth.uid) return <Redirect to='/' /> 
+    if (auth.uid) return <Redirect to='/test2' /> 
     return (
       <div className="container">
         <form className="white" onSubmit={this.handleSubmit}>

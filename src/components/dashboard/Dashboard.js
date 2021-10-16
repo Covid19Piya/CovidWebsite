@@ -12,7 +12,7 @@ class Dashboard extends Component {
   render() {
     const { projects, auth, notifications } = this.props;
 
-    if (auth.email != null && auth.phoneNumber == null)  {return < Redirect to='/project' />} 
+    if (auth.email != null && auth.phoneNumber == null)  {return < Redirect to='/test2' />} 
     else if (auth.phoneNumber != null && auth.email == null) { return < Redirect to='/test3'/>}
     else if (auth.phoneNumber == null && auth.email == null) { return < Redirect to='/test'/>}
 

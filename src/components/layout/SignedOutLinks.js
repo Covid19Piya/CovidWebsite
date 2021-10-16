@@ -5,9 +5,9 @@ const SignedOutLinks = () => {
   return (
     <div>
       <ul className="right">
-        <li><NavLink to='/signup'>สมัครเป็นอาสาสมัคร</NavLink></li>
-        <li><NavLink to='/signin'>เข้าสู่ระบบสำหรับอาสาสมัคร</NavLink></li>
-        <li><NavLink to='/loginp'>เข้าสู่ระบบสำหรับคนที่ต้องการความช่วยเหลือ</NavLink></li>
+        <li><NavLink to='/signup'>Signup Volunteer</NavLink></li>
+        <li><NavLink to='/signin'>Login Volunteer</NavLink></li>
+        <li><NavLink to='/loginp'>Login Patient</NavLink></li>
       </ul>
     </div>
   )

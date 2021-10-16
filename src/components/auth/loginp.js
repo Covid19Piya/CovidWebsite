@@ -1,6 +1,9 @@
 import React from 'react'
 import firebase from 'firebase'
 
+//หน้า login patient
+//กรอก เบอร์โทร และ รอรับ OTP
+
 class loginp extends React.Component {
 
   handleChange = (e) =>{
@@ -57,18 +60,18 @@ class loginp extends React.Component {
   }
   render() {
     return (
-      <div>
-        <h2>Login Form</h2>
-        <form onSubmit={this.onSignInSubmit}>
-          <div id="sign-in-button"></div>
+      <div className="container">
+        <form className="white" onSubmit={this.onSignInSubmit}>
+        <h5 className="grey-text text-darken-3">Login</h5>
+          <div className="input-field" id="sign-in-button"></div>
           <input type="number" name="mobile" placeholder="กรอกหมายเลขโทรศัพท์" required onChange={this.handleChange}/>
-          <button type="submit">Submit</button>
+          <button  className="btn pink lighten-1 z-depth-0" type="submit">Submit</button>
         </form>
 
-        <h2>Enter OTP</h2>
-        <form onSubmit={this.onSubmitOTP}>
-          <input type="number" name="otp" placeholder="กรองOTP" required onChange={this.handleChange}/>
-          <button type="submit">Submit</button>
+        <form className="white" onSubmit={this.onSubmitOTP}>
+        <h5 className="grey-text text-darken-3">Enter OTP</h5>
+          <input type="number" name="otp" placeholder="กรอกรหัสOTP" required onChange={this.handleChange}/>
+          <button  className="btn pink lighten-1 z-depth-0" type="submit">Submit</button>
         </form>
       </div>
     )
