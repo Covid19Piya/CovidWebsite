@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './test2.css';
 
 
 export default class test2 extends Component {

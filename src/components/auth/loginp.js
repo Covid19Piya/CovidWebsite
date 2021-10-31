@@ -1,9 +1,6 @@
 import React from 'react'
 import firebase from 'firebase'
 
-//หน้า login patient
-//กรอก เบอร์โทร และ รอรับ OTP
-
 class loginp extends React.Component {
 
   handleChange = (e) =>{
