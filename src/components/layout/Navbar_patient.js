@@ -8,7 +8,7 @@ const Navbar_patient = (props) => {
     <div>
       <ul className="right">
         <li><NavLink to='/create'>Need For Help</NavLink></li>
-        <li><NavLink to='/test3'>See Post For Help</NavLink></li>
+        <li><NavLink to='/seepatient'>See Post For Help</NavLink></li>
         <li><NavLink to='/'>Chat To Volunteer</NavLink></li>
         <li><a onClick={props.signOut}>Log Out</a></li>
         <li><NavLink to='/' className="btn btn-floating pink lighten-1">
