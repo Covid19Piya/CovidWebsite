@@ -135,7 +135,7 @@ export default class test2 extends React.Component {
                   <p key={idx}>ชื่อ : {d.Name}</p>
                   <p key={idx}>ความช่วยเหลือที่ต้องการ : {d.Help}</p>
                   {console.log(phoneUser, user.email,urlPhotoVolunteer)}
-                  <button  onClick={() => {storeUser(d.Name, d.Age, d.Help, d.Address, d.PhoneNumber1, d.gender);
+                  <button disabled={checkDuplicateCase} onClick={() => {storeUser(d.Name, d.Age, d.Help, d.Address, d.PhoneNumber1, d.gender);
                         sendRequest(phoneUser, 
                             user.email, nameVol, urlPhotoVolunteer);
                         }}>{checkDuplicateCaseText}</button>

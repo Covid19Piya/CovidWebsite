@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import firebase from "firebase";
 import { Link } from 'react-router-dom';
+import Select from "react-select";
 
 
 export default class test3 extends React.Component {
@@ -57,11 +58,11 @@ export default class test3 extends React.Component {
 
 
 
-
   render() {
     let user = firebase.auth().currentUser;
 
-    console.log(user.email)
+    let namePatient = this.props.location.state.name
+
 
     this.fireStoreData =  firebase.firestore().collection("Volunteer").doc(user.email).collection("Case");
 
@@ -79,20 +80,6 @@ export default class test3 extends React.Component {
         urlPhotoVolunteer = documentSnapshot.data().urlUser
         console.log(urlPhotoVolunteer);
       });
-
-    function sendRequest(name, email, nameVol, urlPhotoVolunteer) {
-        firebase.firestore().collection("Patient").doc(name).collection("Case")
-          .get().then(function (querySnapshot) {
-            querySnapshot.forEach(function (doc) {
-              doc.ref.update({
-                Request: email,
-                NameVol : nameVol,
-                url :urlPhotoVolunteer
-              });
-    
-            });
-          })
-      }
 
 
       function storeUser(nameUser, ageUser, helpUser, addressUser, phoneNumberUser,genderUser) {
@@ -115,48 +102,42 @@ export default class test3 extends React.Component {
             });
           });
       }
-
-     function handleClick(e, check) {
-         console.log(check)
-         if (check== "No"){
-             console.log("eeeeeeeeeeee")
-             e.preventDefault();
-         }
-      }
-
-
+    
+    
 
     return (
       <div className="dashboard container">
         <div className="row">
           <div className="col s12 m6">
             <div>
-                <h1>ผู้ได้รับผลกระทบในการดูเเลของคุณ</h1>
+                <h1>ข้อมูลผู้ได้รับผลกระทบ</h1>
               {listData.map(function (d, idx) {
                  
+                  if (d.Name == namePatient) {
+                   
                 
-                  if (d.Confirm == "Yes") {
-                    checkDuplicateCaseText = "ตรวจสอบข้อมูล"
-                    checkDuplicateCase = false
-                  } else if(d.Confirm == "No"){
-                    checkDuplicateCaseText = "รอการอนุมัติ"
-                    checkDuplicateCase = true
-                  }
-
-                return (<div>
+                return (
+                <div>
                   <p key={idx}>ชื่อ : {d.Name}</p>
+                  <p key={idx}>อายุ : {d.Age}</p>
+                  <p key={idx}>ที่อยู่ : {d.Address}</p>
+                  <p key={idx}>ที่อยู่ : {d.PhoneNumber1}</p>
                   <p key={idx}>ความช่วยเหลือที่ต้องการ : {d.Help}</p>
-                  <p key={idx}>สถานะการเข้าถึง {d.Confirm}</p>
-                
+                  <p key={idx}>สถานะ : {d.Status}</p>          
+                  
+                  <button disabled={checkDuplicateCase} onClick={() => {storeUser(d.Name, d.Age, d.Help, d.Address, d.PhoneNumber1, d.gender);
+                        }}>{checkDuplicateCaseText}</button>
+
                 <Link
-                  onClick={(e) => handleClick(e, d.Confirm)}
+                    disabled={checkDuplicateCase}
                     to={{
-                        pathname: '/test4',
-                        state: { name: d.Name}
+                      pathname: '/test4',
+                      state: { phoneNumber: d.PhoneNumber1}
                     }} >{checkDuplicateCaseText}
                 </Link>
-                    
+                  
                 </div>)
+              }
               })}
             </div>
           </div>

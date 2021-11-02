@@ -11,6 +11,7 @@ const Navbar_volunteer = (props) => {
         <li><NavLink to='/create_volunteer'>Post For Help</NavLink></li>
         <li><NavLink to='/chat'>Chat To Patient</NavLink></li>
         <li><NavLink to='/test'>Patient</NavLink></li>
+        <li><NavLink to='/test3'>Your Case</NavLink></li>
         <li><a onClick={props.signOut}>Log Out</a></li>
         <li><NavLink to='/' className="btn btn-floating pink lighten-1">
           {props.profile.initials}

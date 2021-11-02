@@ -14,6 +14,8 @@ import test3 from './components/test3'
 import posthelp from './components/posthelp';
 import seepatient from './components/seepost_patient';
 import loginp from './components/auth/loginp'
+import test4 from './components/test4';
+
 
 class App extends Component {
   render() {
@@ -31,6 +33,7 @@ class App extends Component {
             <Route path='/test' component={test} />
             <Route path='/test2' component={test2} />
             <Route path='/test3' component={test3} />
+            <Route path='/test4' component={test4} />
             <Route path='/posthelp' component={posthelp} />
             <Route path='/seepatient' component={seepatient} />
             <Route path='/loginp' component={loginp} />
