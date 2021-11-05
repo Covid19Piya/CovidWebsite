@@ -39,35 +39,67 @@ class Creatpost_patient extends Component {
     if (!auth.uid) return <Redirect to='/signin' /> 
     return (
       <div className="container">
-        <form className="white" onSubmit={this.handleSubmit}>
-          <h5 className="grey-text text-darken-3">Need Help Form</h5>
+          <h3 style ={{backgroundColor:"#FEBBDD",
+              fontWeight: "bold",
+              color:"#fff",
+              textShadow: "2px 2px gray",
+              textAlign:"center",
+              fontFamily:"FC.otf",
+              padding: 10,
+              borderRadius: 8,
+              boxShadow: "1px 3px 1px #9E9E9E",
+              width:1030,
+
+              }}>Need Help Form</h3>
+        <form style = {
+                    {backgroundColor: "#fff",
+                    padding: 10,
+                    margin: 10,
+                    marginBottom: 30,
+                    paddingBottom: 28,
+                    width: 1010,
+                    borderRadius: 8,
+                    boxShadow: "1px 3px 1px #9E9E9E",
+                    
+                    }} onSubmit={this.handleSubmit}>
       
           <div className="input-field">
             <input type="text" id='Name' onChange={this.handleChange} />
-            <label htmlFor="title">Name </label>
+            <label style ={{color:"black"}} htmlFor="title">Name </label>
           </div>
           <div className="input-field">
             <textarea id="Age" className="materialize-textarea" onChange={this.handleChange}></textarea>
-            <label htmlFor="content">Age</label>
+            <label style ={{color:"black"}} htmlFor="content">Age</label>
           </div>
           <div className="input-field">
             <textarea id="gender" className="materialize-textarea" onChange={this.handleChange}></textarea>
-            <label htmlFor="content">gender</label>
+            <label style ={{color:"black"}} htmlFor="content">gender</label>
           </div>
           <div className="input-field">
             <textarea id="Address" className="materialize-textarea" onChange={this.handleChange}></textarea>
-            <label htmlFor="content">Address</label>
+            <label style ={{color:"black"}} htmlFor="content">Address</label>
           </div>
           <div className="input-field">
             <textarea id="PhoneNumber1" className="materialize-textarea" onChange={this.handleChange}></textarea>
-            <label htmlFor="content">Phone Number</label>
+            <label style ={{color:"black"}} htmlFor="content">Phone Number</label>
           </div>
           <div className="input-field">
             <textarea id="Help" className="materialize-textarea" onChange={this.handleChange}></textarea>
-            <label htmlFor="content">Help</label>
+            <label style ={{color:"black"}} htmlFor="content">Help</label>
           </div>
           <div className="input-field">
-            <button className="btn pink lighten-1">Submit</button>
+            <button style = {{
+                    textAlign :"center",
+                    backgroundColor:"#F43A6B",
+                    color:"white",
+                    padding: 6,
+                    fontWeight: "bold",
+                    borderRadius: 8,
+                    boxShadow: "1px 3px 1px #9E9E9E",
+                    paddingLeft: 40,
+                    paddingRight: 40,
+                 
+                  }}>Submit</button>
           </div>
         </form>
       </div>
