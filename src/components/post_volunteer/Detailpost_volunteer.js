@@ -49,6 +49,6 @@ const mapStateToProps = (state, ownProps) => {
 export default compose(
   connect(mapStateToProps),
   firestoreConnect([{
-    collection: 'post_volunteer'
+    collection: 'projectva'
   }])
 )(Detailpost_volunteer)

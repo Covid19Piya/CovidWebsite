@@ -6,7 +6,7 @@ export const createProject = (project) => {
 
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
-        checkUser = user.email
+        checkUser = user.phoneNumber
         console.log(checkUser)
       }
     })
