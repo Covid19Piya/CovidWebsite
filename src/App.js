@@ -15,7 +15,7 @@ import posthelp from './components/posthelp';
 import seepatient from './components/seepost_patient';
 import loginp from './components/auth/loginp'
 import test4 from './components/test4';
-
+import Home from './components/home'
 
 class App extends Component {
   render() {
@@ -38,7 +38,9 @@ class App extends Component {
             <Route path='/seepatient' component={seepatient} />
             <Route path='/loginp' component={loginp} />
             <Route path='/create_volunteer' component={Createpost_volunteer} />
-
+            <Route path="/">
+              <Home />
+            </Route>
           </Switch>
         </div>
       </BrowserRouter>
