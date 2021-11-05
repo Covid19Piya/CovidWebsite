@@ -1,42 +1,38 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { createProject } from '../../store/actions/projectActions'
-import { Redirect } from 'react-router-dom'
-
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { createProject } from "../../store/actions/projectActions";
+import { Redirect } from "react-router-dom";
+import firebase from "firebase";
 
 class Creatpost_patient extends Component {
   state = {
-    Address: '',
-    Age: '',
-    Confirm: '',
-    Help: '',
-    Name: '',
-    PhoneNumber1: '',
-    Request: '',
-    Status: '',
-    gender: '',
-    id: ''
-    
-  }
+    Address: "",
+    Age: "",
+    Confirm: "",
+    Help: "",
+    Name: "",
+    PhoneNumber1: "",
+    Request: "",
+    Status: "",
+    gender: "",
+    id: "",
+  };
   handleChange = (e) => {
     this.setState({
-      [e.target.id]: e.target.value
-    })
-  }
+      [e.target.id]: e.target.value,
+    });
+  };
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.createProject(this.state);
-    this.props.history.push('/');
-  }
-
-
+    this.props.history.push("/");
+  };
 
   render() {
     const { auth } = this.props;
-
-    console.log(auth.phoneNumber)
-    this.state.id = auth.phoneNumber
-    if (!auth.uid) return <Redirect to='/signin' /> 
+    console.log(auth.phoneNumber);
+    this.state.id = auth.phoneNumber;
+    if (!auth.uid) return <Redirect to="/signin" />;
     return (
       <div className="container">
           <h3 style ={{backgroundColor:"#FEBBDD",
@@ -103,20 +99,20 @@ class Creatpost_patient extends Component {
           </div>
         </form>
       </div>
-    )
+    );
   }
 }
 
 const mapStateToProps = (state) => {
   return {
-    auth: state.firebase.auth
-  }
-}
+    auth: state.firebase.auth,
+  };
+};
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    createProject: (project) => dispatch(createProject(project))
-  }
-}
+    createProject: (project) => dispatch(createProject(project)),
+  };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Creatpost_patient)
+export default connect(mapStateToProps, mapDispatchToProps)(Creatpost_patient);

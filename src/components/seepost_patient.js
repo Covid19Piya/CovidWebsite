@@ -1,105 +1,81 @@
 import React, { Component } from "react";
 import firebase from "firebase";
 
-
-export default class PatientConfirm extends React.Component {
+export default class seepost_patient extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      selectedOption: null,
       userArr: [],
-      NameVol: '',
-      Confirm: '',
-      Help: '',
-      Address: '',
-      PhoneNumber: '',
-      gender: '',
-      Request:'No',
-      url: '',
-      Name:''
+      checkUser: "notnull",
     };
-   
   }
-
-  componentDidMount() {
-    this.unsubscribe = this.fireStoreData.onSnapshot(this.getCollection);
-    
-  }
-
- 
-  componentWillUnmount() {
-    this.unsubscribe();
-
-  }
-
-  getCollection = (querySnapshot) => {
-    const userArr = [];
-    querySnapshot.forEach((res) => {
-      const { Name, Help, Address, Age, PhoneNumber1, Status, Request, gender, Confirm, NameVol, url } = res.data();
-      userArr.push({
-        key: res.id,
-        res,
-        Name,
-        Age,
-        Help,
-        Address,
-        PhoneNumber1,
-        Status,
-        Request,
-        gender,
-        Confirm,
-        NameVol,
-        url
-      })
-      this.state.NameVol = NameVol
-      this.state.Request = Request
-      this.state.Confirm = Confirm
-      this.state.url = url;
-      this.state.Name =Name
-
-    })
-    this.setState({
-      userArr
-    })
-  }
-
-    updateData = (name, status, user) =>{
-    firebase.firestore().collection("Volunteer").doc(user).collection("Case")
-        .get().then(function (querySnapshot) {
-            querySnapshot.forEach(function (doc) {
-                if (doc.data().Name == name) {
-                    doc.ref.update({
-                        Confirm: status
-                    });
-                }
-            });
-        });
-}
-  
-
 
   render() {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.state.checkUser = user.phoneNumber;
+      }
+    });
+    console.log(this.state.checkUser);
+    const docRef = firebase
+      .firestore()
+      .collection("Patient")
+      .doc(this.state.checkUser)
+      .collection("Case");
 
-    let user = firebase.auth().currentUser;
+    docRef.onSnapshot((querySnapShot) => {
+      querySnapShot.forEach((doc) => {
+        console.log(doc.data());
+        this.n = doc.data().Name;
+        this.state.userArr.push({
+          Address: doc.data().Address,
+          Age: doc.data().Age,
+          Confirm: doc.data().Confirm,
+          Help: doc.data().Help,
+          Name: doc.data().Name,
+          PhoneNumber1: doc.data().PhoneNumber1,
+          Status: doc.data().Status,
+          gender: doc.data().gender,
+          Request: doc.data().Request,
+        });
+      });
+    });
 
-    console.log(user.phoneNumber)
-    this.fireStoreData =  firebase.firestore().collection("Patient").doc(user.phoneNumber).collection("Case");
+    let listData = [];
 
-        
-
+    this.state.userArr.forEach((doc) => {
+      listData.push(doc.Name);
+      listData.push(doc.Age);
+      listData.push(doc.gender);
+      listData.push(doc.Address);
+      listData.push(doc.PhoneNumber1);
+      listData.push(doc.Status);
+      listData.push(doc.Help);
+      listData.push(doc.Confirm);
+      listData.push(doc.Request);
+    });
+    console.log(listData);
+    let count = 0;
     return (
       <div className="dashboard container">
         <div className="row">
           <div className="col s12 m6">
-            <h2>ผู้ติดต่อต้องการให้ความช่วยเหลือ</h2>
-              <p>ชื่อ : {this.state.NameVol}</p>
-              <p>อีเมล : {this.state.Request}</p>
-              <p>สถานะ : {this.state.Confirm}</p>
-              <img src={this.state.url}/>
-              <button onClick={this.updateData(this.state.Name, "Yes", this.state.Request)}>อนุญาติให้เข้าถึงข้อมูล</button>
-              <button onClick={this.updateData(this.state.Name, "No", this.state.Request)}>ไม่อนุญาติให้เข้าถึงข้อมูล</button>
-         </div>
+            {listData.map((item, index) => {
+              count += 1;
+              if (count == 9) {
+                count = 0;
+                return (
+                  <div>
+                    <p>อนุญาติให้เข้าถึงหรือไม่</p>
+                    <button>ยืนยัน</button>
+                    <button>ปฏิเสธ</button>
+                  </div>
+                );
+              }
+              return <p key={index}>{item}</p>;
+            })}
+          </div>
         </div>
       </div>
     );
