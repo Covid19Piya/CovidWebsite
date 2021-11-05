@@ -16,6 +16,9 @@ import seepatient from './components/seepost_patient';
 import loginp from './components/auth/loginp'
 import test4 from './components/test4';
 import Home from './components/home'
+import VolunteerChat from './components/VolunteerChat'
+
+
 
 class App extends Component {
   render() {
@@ -37,6 +40,7 @@ class App extends Component {
             <Route path='/posthelp' component={posthelp} />
             <Route path='/seepatient' component={seepatient} />
             <Route path='/loginp' component={loginp} />
+            <Route path='/VolunteerChat' component={VolunteerChat} />
             <Route path='/create_volunteer' component={Createpost_volunteer} />
             <Route path="/">
               <Home />

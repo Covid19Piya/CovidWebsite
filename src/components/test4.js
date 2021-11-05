@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 import firebase from "firebase";
 import { Link } from 'react-router-dom';
-import Select from "react-select";
 
 
-export default class test3 extends React.Component {
+
+
+export default class test4 extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
+      selectedOption: null,
+
       userArr: [],
       Name: '',
       Age: '',
@@ -25,7 +27,7 @@ export default class test3 extends React.Component {
     
   }
 
-
+ 
   componentWillUnmount() {
     this.unsubscribe();
 
@@ -55,9 +57,6 @@ export default class test3 extends React.Component {
   }
 
 
-
-
-
   render() {
     let user = firebase.auth().currentUser;
 
@@ -69,8 +68,7 @@ export default class test3 extends React.Component {
         
     let listData = this.state.userArr;
 
-    let checkDuplicateCaseText = "ยืนยันช่วยเหลือ";
-    let checkDuplicateCase = true;
+
     let nameVol = ""
     let urlPhotoVolunteer = ""
 
@@ -81,29 +79,7 @@ export default class test3 extends React.Component {
         console.log(urlPhotoVolunteer);
       });
 
-
-      function storeUser(nameUser, ageUser, helpUser, addressUser, phoneNumberUser,genderUser) {
-          
-        firebase.firestore().collection("Volunteer").doc(user.email).collection("Case")
-          .add({
-            Name: nameUser,
-            Age: ageUser,
-            Help: helpUser,
-            Address: addressUser,
-            PhoneNumber1: phoneNumberUser,
-            Status: "waiting",
-            Confirm: "No",
-            gender: genderUser
-          })
-          .catch((err) => {
-            console.log('Error found: ', err);
-            this.setState({
-              isLoading: false,
-            });
-          });
-      }
-    
-    
+  console.log(listData)
 
     return (
       <div className="dashboard container">
@@ -111,6 +87,7 @@ export default class test3 extends React.Component {
           <div className="col s12 m6">
             <div>
                 <h1>ข้อมูลผู้ได้รับผลกระทบ</h1>
+                
               {listData.map(function (d, idx) {
                  
                   if (d.Name == namePatient) {
@@ -124,21 +101,16 @@ export default class test3 extends React.Component {
                   <p key={idx}>ที่อยู่ : {d.PhoneNumber1}</p>
                   <p key={idx}>ความช่วยเหลือที่ต้องการ : {d.Help}</p>
                   <p key={idx}>สถานะ : {d.Status}</p>          
-                  
-                  <button disabled={checkDuplicateCase} onClick={() => {storeUser(d.Name, d.Age, d.Help, d.Address, d.PhoneNumber1, d.gender);
-                        }}>{checkDuplicateCaseText}</button>
-
-                <Link
-                    disabled={checkDuplicateCase}
+                  <Link
                     to={{
-                      pathname: '/test4',
-                      state: { phoneNumber: d.PhoneNumber1}
-                    }} >{checkDuplicateCaseText}
+                        pathname: '/VolunteerChat',
+                        state: { name: d.PhoneNumber1}
+                    }} >พูดคุยกับผู้ได้รับผลกระทบ
                 </Link>
-                  
                 </div>)
               }
               })}
+              
             </div>
           </div>
         </div>
