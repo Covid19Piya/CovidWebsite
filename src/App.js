@@ -17,7 +17,7 @@ import loginp from './components/auth/loginp'
 import test4 from './components/test4';
 import Home from './components/home'
 import VolunteerChat from './components/VolunteerChat'
-
+import PatientChat from './components/PatientChat'
 
 
 class App extends Component {
@@ -42,6 +42,8 @@ class App extends Component {
             <Route path='/loginp' component={loginp} />
             <Route path='/VolunteerChat' component={VolunteerChat} />
             <Route path='/create_volunteer' component={Createpost_volunteer} />
+            <Route path='/PatientChat' component={PatientChat} />
+
             <Route path="/">
               <Home />
             </Route>

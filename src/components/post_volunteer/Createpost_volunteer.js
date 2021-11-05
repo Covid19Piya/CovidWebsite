@@ -21,7 +21,7 @@ class Createpost_volunteer extends Component {
     };
     render() {
       const { auth } = this.props;
-      if (!auth.uid) return <Redirect to="/test" />;
+      if (!auth.uid) return <Redirect to="/Home" />;
       return (
         <div className="container" >
           <h3 style ={{backgroundColor:"#FEBBDD",

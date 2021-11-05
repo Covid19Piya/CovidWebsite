@@ -12,7 +12,7 @@ const Navbar_volunteer = (props) => {
         <li><NavLink style = {{color: "#F43A6B"}} to='/chat'>Chat To Patient</NavLink></li>
         <li ><NavLink style = {{color: "#F43A6B"}} to='/test'>Patient</NavLink></li>
         <li ><NavLink style = {{color: "#F43A6B"}} to='/test3'>Your Case</NavLink></li>
-        <li><a style = {{color: "#fff",backgroundColor:"#FF4747"}} onClick={props.signOut}>Log Out</a></li>
+        <li><NavLink to='/Home' onClick={props.signOut}>Log Out</NavLink></li>
         <li><NavLink to='/' className="btn btn-floating pink lighten-1">
           {props.profile.initials}
         </NavLink></li>
