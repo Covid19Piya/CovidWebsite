@@ -15,9 +15,9 @@ class Createpost_volunteer extends Component {
     Other: "",
     Location: "",
     id: "",
-    url:"",
-    fileType:"",
-    fileName:"",
+    url: "",
+    fileType: "",
+    fileName: "",
   };
 
   handleChange = (e) => {
@@ -43,7 +43,7 @@ class Createpost_volunteer extends Component {
       const file = e.target[0].files[0];
       this.state.fileType = file.type;
       this.state.fileName = file.name;
-      
+
       uploadFiles(file);
     };
 
@@ -57,7 +57,7 @@ class Createpost_volunteer extends Component {
           const prog = Math.round(
             (snapshot.bytesTransferred / snapshot.totalBytes) * 100
           );
-    
+
         },
         (error) => console.log(error),
         () => {
@@ -83,7 +83,9 @@ class Createpost_volunteer extends Component {
             <label htmlFor="title">ชื่อของคุณ</label>
           </div>
           <div className="input-field">
-            <textarea id="Title" className="materialize-textarea"></textarea>
+            <textarea id="Title"
+              onChange={this.handleChange}
+              className="materialize-textarea"></textarea>
             <label htmlFor="content">ชื่อเรื่อง</label>
           </div>
           <div className="input-field">
@@ -128,7 +130,7 @@ class Createpost_volunteer extends Component {
           <input type="file" className="input" />
           <button type="submit">Upload</button>
         </form>
-     
+
       </div>
     );
   }
