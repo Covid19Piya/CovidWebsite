@@ -18,7 +18,7 @@ import test4 from './components/test4';
 import Home from './components/home'
 import VolunteerChat from './components/VolunteerChat'
 import PatientChat from './components/PatientChat'
-
+import NewsDonateVolunteer from './components/NewsDonateVolunteer'
 
 class App extends Component {
   render() {
@@ -42,6 +42,7 @@ class App extends Component {
             <Route path='/loginp' component={loginp} />
             <Route path='/VolunteerChat' component={VolunteerChat} />
             <Route path='/create_volunteer' component={Createpost_volunteer} />
+            <Route path='/NewsDonateVolunteer' component={NewsDonateVolunteer} />
             <Route path='/PatientChat' component={PatientChat} />
 
             <Route path="/">

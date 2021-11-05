@@ -8,7 +8,8 @@ const Navbar_patient = (props) => {
     <div>
       <ul className="right">
         <li><NavLink to='/create'>Need For Help</NavLink></li>
-        <li><NavLink to='/seepatient'>See Post For Help</NavLink></li>
+        <li><NavLink to='/NewsDonateVolunteer'>Donate News</NavLink></li>
+        <li><NavLink to='/seepatient'>Your Case</NavLink></li>
         <li><NavLink to='/PatientChat'>Chat To Volunteer</NavLink></li>
         <li><NavLink to='/Home' onClick={props.signOut}>Log Out</NavLink></li>
         <li><NavLink to='/' className="btn btn-floating pink lighten-1">
