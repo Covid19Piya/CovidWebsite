@@ -59,7 +59,7 @@ export default class test2 extends React.Component {
     let user = firebase.auth().currentUser;
     let phoneUser = this.props.location.state.phoneNumber
 
-    console.log(user.email)
+    console.log(phoneUser)
 
     this.fireStoreData = firebase.firestore().collection("Patient").doc(phoneUser).collection("Case");
     this.storeData =  firebase.firestore().collection("Volunteer").doc(user.email).collection("Case");
@@ -71,6 +71,8 @@ export default class test2 extends React.Component {
     let checkDuplicateCase = false;
     let nameVol = ""
     let urlPhotoVolunteer = ""
+
+    console.log(listData)
 
     firebase.firestore().collection("Volunteer").doc(user.email)
       .onSnapshot(documentSnapshot => {
@@ -122,15 +124,16 @@ export default class test2 extends React.Component {
         <div className="row">
           <div className="col s12 m6">
             <div>
-              <h3 style ={{backgroundColor:"#FEBBDD",
-              fontWeight: "bold",
-              color:"#fff",
-              textShadow: "2px 2px gray",
-              textAlign:"center",
-              fontFamily:"FC.otf",
-              padding: 10,
-              borderRadius: 8,
-              boxShadow: "1px 3px 1px #9E9E9E",
+              <h3 style ={{
+                color:"#fff",
+                padding: 10,
+                borderRadius: 8,
+                boxShadow: "1px 3px 1px #9E9E9E",
+                backgroundColor:"#FEBBDD",
+                textAlign:"center",
+                fontFamily:"FC.otf",
+                fontWeight: "bold",
+                textShadow: "2px 2px gray",
               
               }}>ข้อมูลผู้ได้รับผลกระทบ</h3>
               {listData.map(function (d, idx) {
