@@ -16,14 +16,14 @@ export const createProjectva = (projectva) => {
     firestore.collection('PostDonate').add({
       address: projectva.Location,
       detail: projectva.Description,    
-      fileName : "",
-      fileType: "",
+      fileName : projectva.fileName,
+      fileType: projectva.fileType,
       name: projectva.Name,
       other: projectva.Other,
       phoneNumber: projectva.PhoneNumber2,
       timestamp: "",
       topic: projectva.Title,
-      url: "",
+      url: projectva.url,
       id: projectva.id,
 
     }).then(() => {

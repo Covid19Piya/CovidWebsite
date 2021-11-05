@@ -1,10 +1,9 @@
 import React, { Component } from "react";
+import storage from "../../config/fbConfig";
+import firebase from "../../config/fbConfig";
 import { connect } from "react-redux";
 import { createProjectva } from "../../store/actions/projectActionsva";
 import { Redirect } from "react-router-dom";
-import storage from "../../config/fbConfig";
-import { useState } from "react";
-import firebase from "../../config/fbConfig";
 
 class Createpost_volunteer extends Component {
   state = {
@@ -16,6 +15,9 @@ class Createpost_volunteer extends Component {
     Other: "",
     Location: "",
     id: "",
+    url:"",
+    fileType:"",
+    fileName:"",
   };
 
   handleChange = (e) => {
@@ -35,6 +37,42 @@ class Createpost_volunteer extends Component {
     console.log(auth.email);
     this.state.id = auth.email;
     if (!auth.uid) return <Redirect to="/signin" />;
+
+    const formHandler = (e) => {
+      e.preventDefault();
+      const file = e.target[0].files[0];
+      this.state.fileType = file.type;
+      this.state.fileName = file.name;
+      
+      uploadFiles(file);
+    };
+
+    const uploadFiles = (file) => {
+      //
+      const uploadTask = firebase.storage().ref(`files/${file.name}`).put(file);
+      uploadTask.on(
+        "state_changed",
+        (snapshot) => {
+          //
+          const prog = Math.round(
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+          );
+    
+        },
+        (error) => console.log(error),
+        () => {
+          firebase.storage()
+            .ref("files")
+            .child(file.name)
+            .getDownloadURL()
+            .then((url) => {
+              console.log(url);
+              this.state.url = url;
+            });
+        }
+      );
+    };
+
     return (
       <div className="container">
         <form className="white" onSubmit={this.handleSubmit}>
@@ -45,10 +83,7 @@ class Createpost_volunteer extends Component {
             <label htmlFor="title">ชื่อของคุณ</label>
           </div>
           <div className="input-field">
-            <textarea
-              id="Title"
-              className="materialize-textarea"
-            ></textarea>
+            <textarea id="Title" className="materialize-textarea"></textarea>
             <label htmlFor="content">ชื่อเรื่อง</label>
           </div>
           <div className="input-field">
@@ -85,11 +120,15 @@ class Createpost_volunteer extends Component {
           </div>
 
           <div className="input-field">
-            <button className="btn pink lighten-1" >
-              Submit
-            </button>
+            <button className="btn pink lighten-1">Submit</button>
           </div>
         </form>
+
+        <form onSubmit={formHandler}>
+          <input type="file" className="input" />
+          <button type="submit">Upload</button>
+        </form>
+     
       </div>
     );
   }
@@ -106,7 +145,6 @@ const mapDispatchToProps = (dispatch) => {
     createProjectva: (projectva) => dispatch(createProjectva(projectva)),
   };
 };
-
 
 export default connect(
   mapStateToProps,
