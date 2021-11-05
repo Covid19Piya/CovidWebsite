@@ -26,7 +26,7 @@ class SignUp extends Component {
   }
   render() {
     const { auth, authError } = this.props;
-    if (auth.uid) return <Redirect to='/test2' /> 
+    if (auth.uid) return <Redirect to='/Home' /> 
     return (
       <div className="container">
         <form className="white" onSubmit={this.handleSubmit}>
