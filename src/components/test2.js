@@ -122,7 +122,17 @@ export default class test2 extends React.Component {
         <div className="row">
           <div className="col s12 m6">
             <div>
-                <h1>ข้อมูลผู้ได้รับผลกระทบ</h1>
+              <h3 style ={{backgroundColor:"#FEBBDD",
+              fontWeight: "bold",
+              color:"#fff",
+              textShadow: "2px 2px gray",
+              textAlign:"center",
+              fontFamily:"FC.otf",
+              padding: 10,
+              borderRadius: 8,
+              boxShadow: "1px 3px 1px #9E9E9E",
+              
+              }}>ข้อมูลผู้ได้รับผลกระทบ</h3>
               {listData.map(function (d, idx) {
                  
                 
@@ -131,11 +141,40 @@ export default class test2 extends React.Component {
                     checkDuplicateCase = true
                   }
 
-                return (<div>
-                  <p key={idx}>ชื่อ : {d.Name}</p>
-                  <p key={idx}>ความช่วยเหลือที่ต้องการ : {d.Help}</p>
+                return (<div style = {
+                  {backgroundColor: "#fff",
+                  color:"balck",
+                  padding: 10,
+                  margin: 10,
+                  marginBottom: 30,
+                  paddingBottom: 28,
+                  width: 1010,
+                  borderRadius: 8,
+                  boxShadow: "1px 3px 1px #9E9E9E",
+                  
+                  }}>
+                
+                  <p key={idx}><a style ={{
+                    color:"black",
+                    fontWeight:"bold"
+                    
+                  }}>ชื่อ : </a>{d.Name}</p>
+                  <p key={idx}><a style ={{
+                    color:"black",
+                    fontWeight:"bold"
+                  }}>ความช่วยเหลือที่ต้องการ : </a>{d.Help}</p>
+
                   {console.log(phoneUser, user.email,urlPhotoVolunteer)}
-                  <button disabled={checkDuplicateCase} onClick={() => {storeUser(d.Name, d.Age, d.Help, d.Address, d.PhoneNumber1, d.gender);
+                  <button style = {{
+                    textAlign :"center",
+                    backgroundColor:"#F43A6B",
+                    color:"white",
+                    padding: 6,
+                    borderRadius: 8,
+                    boxShadow: "1px 3px 1px #9E9E9E",
+                                       
+                  }}
+                  disabled={checkDuplicateCase} onClick={() => {storeUser(d.Name, d.Age, d.Help, d.Address, d.PhoneNumber1, d.gender);
                         sendRequest(phoneUser, 
                             user.email, nameVol, urlPhotoVolunteer);
                         }}>{checkDuplicateCaseText}</button>

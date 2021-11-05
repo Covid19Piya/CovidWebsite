@@ -5,14 +5,14 @@ import { signOut } from '../../store/actions/authActions'
 
 const Navbar_volunteer = (props) => {
   return (
-    <div>
-      <ul className="right">
-        <li><NavLink to='/seepatient'>See Post</NavLink></li>
-        <li><NavLink to='/create_volunteer'>Post For Help</NavLink></li>
-        <li><NavLink to='/chat'>Chat To Patient</NavLink></li>
-        <li><NavLink to='/test'>Patient</NavLink></li>
-        <li><NavLink to='/test3'>Your Case</NavLink></li>
-        <li><a onClick={props.signOut}>Log Out</a></li>
+    <div >
+      <ul className="right" style = {{backgroundColor:"#FEBBDD"}}>
+        <li ><NavLink style = {{color: "#F43A6B"}} to='/seepatient'>See Post</NavLink></li>
+        <li><NavLink style = {{color: "#F43A6B"}} to='/create_volunteer'>Post For Help</NavLink></li>
+        <li><NavLink style = {{color: "#F43A6B"}} to='/chat'>Chat To Patient</NavLink></li>
+        <li ><NavLink style = {{color: "#F43A6B"}} to='/test'>Patient</NavLink></li>
+        <li ><NavLink style = {{color: "#F43A6B"}} to='/test3'>Your Case</NavLink></li>
+        <li><a style = {{color: "#fff",backgroundColor:"#FF4747"}} onClick={props.signOut}>Log Out</a></li>
         <li><NavLink to='/' className="btn btn-floating pink lighten-1">
           {props.profile.initials}
         </NavLink></li>

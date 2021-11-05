@@ -131,7 +131,18 @@ export default class test3 extends React.Component {
         <div className="row">
           <div className="col s12 m6">
             <div>
-                <h1>ผู้ได้รับผลกระทบในการดูเเลของคุณ</h1>
+                <h3 style ={{backgroundColor:"#FEBBDD",
+              fontWeight: "bold",
+              color:"#fff",
+              textShadow: "2px 2px gray",
+              textAlign:"center",
+              fontFamily:"FC.otf",
+              padding: 10,
+              borderRadius: 8,
+              boxShadow: "1px 3px 1px #9E9E9E",
+              width:1030,
+
+              }}>ผู้ได้รับผลกระทบในการดูเเลของคุณ</h3>
               {listData.map(function (d, idx) {
                  
                 
@@ -143,12 +154,43 @@ export default class test3 extends React.Component {
                     checkDuplicateCase = true
                   }
 
-                return (<div>
-                  <p key={idx}>ชื่อ : {d.Name}</p>
-                  <p key={idx}>ความช่วยเหลือที่ต้องการ : {d.Help}</p>
-                  <p key={idx}>สถานะการเข้าถึง {d.Confirm}</p>
+                return (<div style = {
+                  {backgroundColor: "#fff",
+                  padding: 10,
+                  margin: 10,
+                  marginBottom: 30,
+                  paddingBottom: 28,
+                  width: 1010,
+                  borderRadius: 8,
+                  boxShadow: "1px 3px 1px #9E9E9E",
+                  
+                  }}>
+                  <p key={idx}><a style ={{
+                    color:"black",
+                    fontWeight:"bold"
+                  }}>ชื่อ : </a>{d.Name}</p>
+
+                  <p key={idx}><a style ={{
+                    color:"black",
+                    fontWeight:"bold"
+                  }}>ความช่วยเหลือที่ต้องการ : </a>{d.Help}</p>
+
+                  <p key={idx}><a style ={{
+                    color:"black",
+                    fontWeight:"bold",
+                    
+                  }}>สถานะการเข้าถึง : </a>{d.Confirm}</p>
                 
-                <Link
+                <Link style = {{
+                    textAlign :"center",
+                    backgroundColor:"#F43A6B",
+                    color:"white",
+                    padding: 6,
+                    borderRadius: 8,
+                    boxShadow: "1px 3px 1px #9E9E9E",
+                 
+                  }}
+
                   onClick={(e) => handleClick(e, d.Confirm)}
                     to={{
                         pathname: '/test4',

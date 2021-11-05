@@ -1,15 +1,20 @@
 html{
   min-height: 100%;
 }
+@font-face {
+  font-family: FC;
+  src: url(FC.otf);
+}
 
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: FC;
   
   background-size: 100%;
   background-position: bottom;
-  background-color: #FCDADA;
+  background-color: #FFE8EB;
+  background-image: url("covid.jpg");
   min-height: 100%;
 }
 

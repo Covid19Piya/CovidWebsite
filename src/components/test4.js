@@ -86,14 +86,30 @@ export default class test4 extends React.Component {
         <div className="row">
           <div className="col s12 m6">
             <div>
+<<<<<<< HEAD
                 <h1>ข้อมูลผู้ได้รับผลกระทบ</h1>
                 
+=======
+                <h3 style ={{backgroundColor:"#FEBBDD",
+              fontWeight: "bold",
+              color:"#fff",
+              textShadow: "2px 2px gray",
+              textAlign:"center",
+              fontFamily:"FC.otf",
+              padding: 10,
+              borderRadius: 8,
+              boxShadow: "1px 3px 1px #9E9E9E",
+              
+
+              }}>ข้อมูลผู้ได้รับผลกระทบ</h3>
+>>>>>>> ff83c908bad23e2553560b6b188efdbc09af14aa
               {listData.map(function (d, idx) {
                  
                   if (d.Name == namePatient) {
                    
                 
                 return (
+<<<<<<< HEAD
                 <div>
                   <p key={idx}>ชื่อ : {d.Name}</p>
                   <p key={idx}>อายุ : {d.Age}</p>
@@ -102,6 +118,62 @@ export default class test4 extends React.Component {
                   <p key={idx}>ความช่วยเหลือที่ต้องการ : {d.Help}</p>
                   <p key={idx}>สถานะ : {d.Status}</p>          
                   <Link
+=======
+                <div style = {
+                  {backgroundColor: "#fff",
+                  padding: 10,
+                  margin: 10,
+                  marginBottom: 30,
+                  paddingBottom: 28,
+                  width: 1010,
+                  borderRadius: 8,
+                  boxShadow: "1px 3px 1px #9E9E9E",
+                  
+                  }}>
+                  <p key={idx}><a style ={{
+                    color:"black",
+                    fontWeight:"bold"
+                  }}>ชื่อ : </a>{d.Name}</p>
+
+                  <p key={idx}><a style ={{
+                    color:"black",
+                    fontWeight:"bold"
+                  }}>อายุ : </a>{d.Age}</p>
+
+                  <p key={idx}><a style ={{
+                    color:"black",
+                    fontWeight:"bold"
+                  }}>ที่อยู่ : </a>{d.Address}</p>
+
+                  <p key={idx}><a style ={{
+                    color:"black",
+                    fontWeight:"bold"
+                  }}>เบอร์โทรศัพท์ : </a>{d.PhoneNumber1}</p>
+
+                  <p key={idx}><a style ={{
+                    color:"black",
+                    fontWeight:"bold"
+                  }}>ความช่วยเหลือที่ต้องการ : </a>{d.Help}</p>
+
+                  <p key={idx}><a style ={{
+                    color:"black",
+                    fontWeight:"bold"
+                  }}>สถานะ : </a>{d.Status}</p>          
+                  
+                  {/*<button disabled={checkDuplicateCase} onClick={() => {storeUser(d.Name, d.Age, d.Help, d.Address, d.PhoneNumber1, d.gender);
+                        }}>{checkDuplicateCaseText}</button>*/}
+
+                <Link style = {{
+                    textAlign :"center",
+                    backgroundColor:"#F43A6B",
+                    color:"white",
+                    padding: 6,
+                    borderRadius: 8,
+                    boxShadow: "1px 3px 1px #9E9E9E",
+                 
+                  }}
+                    disabled={checkDuplicateCase}
+>>>>>>> ff83c908bad23e2553560b6b188efdbc09af14aa
                     to={{
                         pathname: '/VolunteerChat',
                         state: { name: d.PhoneNumber1}
