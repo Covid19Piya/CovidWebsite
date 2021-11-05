@@ -3,11 +3,14 @@ import firebase from "firebase";
 import { Link } from 'react-router-dom';
 
 
-export default class test2 extends React.Component {
+
+
+export default class test4 extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
+      selectedOption: null,
+
       userArr: [],
       Name: '',
       Age: '',
@@ -24,15 +27,16 @@ export default class test2 extends React.Component {
     
   }
 
-
+ 
   componentWillUnmount() {
     this.unsubscribe();
 
   }
+
   getCollection = (querySnapshot) => {
     const userArr = [];
     querySnapshot.forEach((res) => {
-      const { Name, Help, Address, Age, PhoneNumber1, Status, Request, gender } = res.data();
+      const { Name, Help, Address, Age, PhoneNumber1, Status, Request, gender, Confirm } = res.data();
       userArr.push({
         key: res.id,
         res,
@@ -43,7 +47,8 @@ export default class test2 extends React.Component {
         PhoneNumber1,
         Status,
         Request,
-        gender
+        gender,
+        Confirm
       })
     })
     this.setState({
@@ -52,23 +57,18 @@ export default class test2 extends React.Component {
   }
 
 
-
-
-
   render() {
     let user = firebase.auth().currentUser;
-    let phoneUser = this.props.location.state.phoneNumber
 
-    console.log(user.email)
+    let namePatient = this.props.location.state.name
 
-    this.fireStoreData = firebase.firestore().collection("Patient").doc(phoneUser).collection("Case");
-    this.storeData =  firebase.firestore().collection("Volunteer").doc(user.email).collection("Case");
+
+    this.fireStoreData =  firebase.firestore().collection("Volunteer").doc(user.email).collection("Case");
 
         
     let listData = this.state.userArr;
 
-    let checkDuplicateCaseText = "ยืนยันช่วยเหลือ";
-    let checkDuplicateCase = false;
+
     let nameVol = ""
     let urlPhotoVolunteer = ""
 
@@ -79,50 +79,14 @@ export default class test2 extends React.Component {
         console.log(urlPhotoVolunteer);
       });
 
-    function sendRequest(name, email, nameVol, urlPhotoVolunteer) {
-        firebase.firestore().collection("Patient").doc(name).collection("Case")
-          .get().then(function (querySnapshot) {
-            querySnapshot.forEach(function (doc) {
-              doc.ref.update({
-                Request: email,
-                NameVol : nameVol,
-                url :urlPhotoVolunteer
-              });
-    
-            });
-          })
-      }
-
-
-      function storeUser(nameUser, ageUser, helpUser, addressUser, phoneNumberUser,genderUser) {
-          
-        firebase.firestore().collection("Volunteer").doc(user.email).collection("Case")
-          .add({
-            Name: nameUser,
-            Age: ageUser,
-            Help: helpUser,
-            Address: addressUser,
-            PhoneNumber1: phoneNumberUser,
-            Status: "waiting",
-            Confirm: "No",
-            gender: genderUser
-          })
-          .catch((err) => {
-            console.log('Error found: ', err);
-            this.setState({
-              isLoading: false,
-            });
-          });
-      }
-
-
+  console.log(listData)
 
     return (
       <div className="dashboard container">
         <div className="row">
           <div className="col s12 m6">
             <div>
-              <h3 style ={{backgroundColor:"#FEBBDD",
+                <h3 style ={{backgroundColor:"#FEBBDD",
               fontWeight: "bold",
               color:"#fff",
               textShadow: "2px 2px gray",
@@ -132,18 +96,16 @@ export default class test2 extends React.Component {
               borderRadius: 8,
               boxShadow: "1px 3px 1px #9E9E9E",
               
+
               }}>ข้อมูลผู้ได้รับผลกระทบ</h3>
               {listData.map(function (d, idx) {
                  
+                  if (d.Name == namePatient) {
+                   
                 
-                  if (d.Request == user.email) {
-                    checkDuplicateCaseText = "คุณมีเคสนี้เเล้ว"
-                    checkDuplicateCase = true
-                  }
-
-                return (<div style = {
+                return (
+                <div style = {
                   {backgroundColor: "#fff",
-                  color:"balck",
                   padding: 10,
                   margin: 10,
                   marginBottom: 30,
@@ -153,34 +115,57 @@ export default class test2 extends React.Component {
                   boxShadow: "1px 3px 1px #9E9E9E",
                   
                   }}>
-                
                   <p key={idx}><a style ={{
                     color:"black",
                     fontWeight:"bold"
-                    
                   }}>ชื่อ : </a>{d.Name}</p>
+
+                  <p key={idx}><a style ={{
+                    color:"black",
+                    fontWeight:"bold"
+                  }}>อายุ : </a>{d.Age}</p>
+
+                  <p key={idx}><a style ={{
+                    color:"black",
+                    fontWeight:"bold"
+                  }}>ที่อยู่ : </a>{d.Address}</p>
+
+                  <p key={idx}><a style ={{
+                    color:"black",
+                    fontWeight:"bold"
+                  }}>เบอร์โทรศัพท์ : </a>{d.PhoneNumber1}</p>
+
                   <p key={idx}><a style ={{
                     color:"black",
                     fontWeight:"bold"
                   }}>ความช่วยเหลือที่ต้องการ : </a>{d.Help}</p>
 
-                  {console.log(phoneUser, user.email,urlPhotoVolunteer)}
-                  <button style = {{
+                  <p key={idx}><a style ={{
+                    color:"black",
+                    fontWeight:"bold"
+                  }}>สถานะ : </a>{d.Status}</p>          
+                  
+                  {/*<button disabled={checkDuplicateCase} onClick={() => {storeUser(d.Name, d.Age, d.Help, d.Address, d.PhoneNumber1, d.gender);
+                        }}>{checkDuplicateCaseText}</button>*/}
+
+                <Link style = {{
                     textAlign :"center",
                     backgroundColor:"#F43A6B",
                     color:"white",
                     padding: 6,
                     borderRadius: 8,
                     boxShadow: "1px 3px 1px #9E9E9E",
-                                       
+                 
                   }}
-                  disabled={checkDuplicateCase} onClick={() => {storeUser(d.Name, d.Age, d.Help, d.Address, d.PhoneNumber1, d.gender);
-                        sendRequest(phoneUser, 
-                            user.email, nameVol, urlPhotoVolunteer);
-                        }}>{checkDuplicateCaseText}</button>
-                  
+                    to={{
+                        pathname: '/VolunteerChat',
+                        state: { name: d.PhoneNumber1}
+                    }} >พูดคุยกับผู้ได้รับผลกระทบ
+                </Link>
                 </div>)
+              }
               })}
+              
             </div>
           </div>
         </div>

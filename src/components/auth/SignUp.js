@@ -13,18 +13,20 @@ class SignUp extends Component {
     firstName: '',
     lastName: '',
   }
+
   handleChange = (e) => {
     this.setState({
       [e.target.id]: e.target.value
     })
   }
+  
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.signUp(this.state);
   }
   render() {
     const { auth, authError } = this.props;
-    if (auth.uid) return <Redirect to='/test2' /> 
+    if (auth.uid) return <Redirect to='/Home' /> 
     return (
       <div className="container">
         <form className="white" onSubmit={this.handleSubmit}>

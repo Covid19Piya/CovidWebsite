@@ -19,9 +19,9 @@ class Dashboard extends Component {
         console.log(checkUser)
       }
     })
-    if (auth.email != null && auth.phoneNumber == null)  {return < Redirect to='/test2' />} 
-    else if (auth.phoneNumber != null && auth.email == null) { return < Redirect to='/test3'/>}
-    else if (auth.phoneNumber == null && auth.email == null) { return < Redirect to='/test'/>}
+    if (auth.email != null && auth.phoneNumber == null)  {return < Redirect to='/Home' />} 
+    else if (auth.phoneNumber != null && auth.email == null) { return < Redirect to='/Home'/>}
+    else if (auth.phoneNumber == null && auth.email == null) { return < Redirect to='/Home'/>}
 
     return (
       <div className="dashboard container">
