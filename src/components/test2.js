@@ -143,6 +143,7 @@ export default class test2 extends React.Component {
 
                 return (<div style = {
                   {backgroundColor: "#fff",
+                  color:"balck",
                   padding: 10,
                   margin: 10,
                   marginBottom: 30,
@@ -152,10 +153,28 @@ export default class test2 extends React.Component {
                   boxShadow: "1px 3px 1px #9E9E9E",
                   
                   }}>
-                  <p key={idx}>ชื่อ : {d.Name}</p>
-                  <p key={idx}>ความช่วยเหลือที่ต้องการ : {d.Help}</p>
+                
+                  <p key={idx}><a style ={{
+                    color:"black",
+                    fontWeight:"bold"
+                    
+                  }}>ชื่อ : </a>{d.Name}</p>
+                  <p key={idx}><a style ={{
+                    color:"black",
+                    fontWeight:"bold"
+                  }}>ความช่วยเหลือที่ต้องการ : </a>{d.Help}</p>
+
                   {console.log(phoneUser, user.email,urlPhotoVolunteer)}
-                  <button disabled={checkDuplicateCase} onClick={() => {storeUser(d.Name, d.Age, d.Help, d.Address, d.PhoneNumber1, d.gender);
+                  <button style = {{
+                    textAlign :"center",
+                    backgroundColor:"#F43A6B",
+                    color:"white",
+                    padding: 6,
+                    borderRadius: 8,
+                    boxShadow: "1px 3px 1px #9E9E9E",
+                                       
+                  }}
+                  disabled={checkDuplicateCase} onClick={() => {storeUser(d.Name, d.Age, d.Help, d.Address, d.PhoneNumber1, d.gender);
                         sendRequest(phoneUser, 
                             user.email, nameVol, urlPhotoVolunteer);
                         }}>{checkDuplicateCaseText}</button>
