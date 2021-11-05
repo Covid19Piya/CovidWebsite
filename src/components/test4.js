@@ -86,10 +86,6 @@ export default class test4 extends React.Component {
         <div className="row">
           <div className="col s12 m6">
             <div>
-<<<<<<< HEAD
-                <h1>ข้อมูลผู้ได้รับผลกระทบ</h1>
-                
-=======
                 <h3 style ={{backgroundColor:"#FEBBDD",
               fontWeight: "bold",
               color:"#fff",
@@ -102,23 +98,12 @@ export default class test4 extends React.Component {
               
 
               }}>ข้อมูลผู้ได้รับผลกระทบ</h3>
->>>>>>> ff83c908bad23e2553560b6b188efdbc09af14aa
               {listData.map(function (d, idx) {
                  
                   if (d.Name == namePatient) {
                    
                 
                 return (
-<<<<<<< HEAD
-                <div>
-                  <p key={idx}>ชื่อ : {d.Name}</p>
-                  <p key={idx}>อายุ : {d.Age}</p>
-                  <p key={idx}>ที่อยู่ : {d.Address}</p>
-                  <p key={idx}>ที่อยู่ : {d.PhoneNumber1}</p>
-                  <p key={idx}>ความช่วยเหลือที่ต้องการ : {d.Help}</p>
-                  <p key={idx}>สถานะ : {d.Status}</p>          
-                  <Link
-=======
                 <div style = {
                   {backgroundColor: "#fff",
                   padding: 10,
@@ -172,8 +157,6 @@ export default class test4 extends React.Component {
                     boxShadow: "1px 3px 1px #9E9E9E",
                  
                   }}
-                    disabled={checkDuplicateCase}
->>>>>>> ff83c908bad23e2553560b6b188efdbc09af14aa
                     to={{
                         pathname: '/VolunteerChat',
                         state: { name: d.PhoneNumber1}
