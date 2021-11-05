@@ -1,0 +1,12 @@
+@font-face {
+    font-family: FC;
+    src: url(FC.otf);
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: FC;
+    color:green;
+  }
+  
