@@ -59,7 +59,7 @@ export default class test2 extends React.Component {
     let user = firebase.auth().currentUser;
     let phoneUser = this.props.location.state.phoneNumber
 
-    console.log(user.email)
+    console.log(phoneUser)
 
     this.fireStoreData = firebase.firestore().collection("Patient").doc(phoneUser).collection("Case");
     this.storeData =  firebase.firestore().collection("Volunteer").doc(user.email).collection("Case");
@@ -71,6 +71,8 @@ export default class test2 extends React.Component {
     let checkDuplicateCase = false;
     let nameVol = ""
     let urlPhotoVolunteer = ""
+
+    console.log(listData)
 
     firebase.firestore().collection("Volunteer").doc(user.email)
       .onSnapshot(documentSnapshot => {
