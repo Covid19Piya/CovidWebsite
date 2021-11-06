@@ -177,7 +177,7 @@ export default class test2 extends React.Component {
                     boxShadow: "1px 3px 1px #9E9E9E",
                                        
                   }}
-                  disabled={checkDuplicateCase} onClick={() => {storeUser(d.Name, d.Age, d.Help, d.Address, d.PhoneNumber1, d.gender);
+                  disabled={checkDuplicateCase} onClick={() => {storeUser(d.Name, d.Age, d.Help, d.Address, phoneUser, d.gender);
                         sendRequest(phoneUser, 
                             user.email, nameVol, urlPhotoVolunteer);
                         }}>{checkDuplicateCaseText}</button>
