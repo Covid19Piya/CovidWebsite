@@ -116,6 +116,7 @@ export default class PatientCase extends React.Component {
             <div>
              <p>อีเมลผู้ต้องการติดต่อ : {this.state.Request}</p>
              <p>ชื่อผู้ต้องการติดต่อ : {this.state.NameVol}</p>
+             <p>ชื่อผู้ต้องการติดต่อ : {this.state.Status}</p>
              <img src={this.state.url}/>
              <button onClick={() => this.changePermision(this.state.Request, "Yes", this.state.Name)}>อนุญาติ</button>
              <button onClick={() => this.changePermision(this.state.Request, "No", this.state.Name)}>ไม่อนุญาติ</button>

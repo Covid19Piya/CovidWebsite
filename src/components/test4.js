@@ -69,10 +69,22 @@ export default class test4 extends React.Component {
     })
   }
 
-  changeState = (Phone, status, name) => {
+  changeState = (Phone, status, name, email) => {
     console.log(Phone, status,name)
 
     firebase.firestore().collection("Patient").doc(Phone).collection("Case")
+      .get().then(function (querySnapshot) {
+        querySnapshot.forEach(function (doc) {
+          console.log(doc.data().Name)
+          if (doc.data().Name == name) {
+            doc.ref.update({
+              Status: status
+            });
+          }
+        });
+      });
+
+      firebase.firestore().collection("Volunteer").doc(email).collection("Case")
       .get().then(function (querySnapshot) {
         querySnapshot.forEach(function (doc) {
           console.log(doc.data().Name)
@@ -173,9 +185,9 @@ export default class test4 extends React.Component {
                         fontWeight: "bold"
                       }}>สถานะ : </a>{this.state.Status}</p>
 
-                      <button onClick={() => this.changeState(this.state.PhoneNumber1, "Waiting", this.state.Name)}>รอ</button>
-                      <button onClick={() => this.changeState(this.state.PhoneNumber1, "On Process", this.state.Name)}>กำลังดำเนิการ</button>
-                      <button onClick={() => this.changeState(this.state.PhoneNumber1, "Finish", this.state.Name)}>เสร็จสิ้น</button>
+                      <button onClick={() => this.changeState(this.state.PhoneNumber1, "Waiting", this.state.Name, user.email)}>รอ</button>
+                      <button onClick={() => this.changeState(this.state.PhoneNumber1, "On Process", this.state.Name, user.email)}>กำลังดำเนิการ</button>
+                      <button onClick={() => this.changeState(this.state.PhoneNumber1, "Finish", this.state.Name, user.email)}>เสร็จสิ้น</button>
 
                       <Link style={{
                         textAlign: "center",
