@@ -57,7 +57,7 @@ export default class FindPatient extends React.Component {
 
         
     let listData = this.state.userArr;
-
+ 
     return (
       <div className="dashboard container">
         <div className="row">

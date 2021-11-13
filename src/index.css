@@ -1,3 +1,4 @@
+
 html{
   min-height: 100%;
 }
@@ -16,6 +17,22 @@ body {
   background-color: #FFE8EB;
   background-image: url("covid.jpg");
   min-height: 100%;
+}
+
+.custom-file-upload {
+  border: 1px solid #000000;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  background-color: #04aa6d;
+}
+
+.condiv{
+  padding-left: 300px;
+  padding-right: 300px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  
 }
 
 form{

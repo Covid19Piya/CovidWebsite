@@ -75,18 +75,63 @@ class Createpost_volunteer extends Component {
 
     return (
       <div className="container">
-        <form className="white" onSubmit={this.handleSubmit}>
-          <h5 className="grey-text text-darken-3">Need Help Form</h5>
+        <h3 style ={{backgroundColor:"#FEBBDD",
+              fontWeight: "bold",
+              color:"#fff",
+              textShadow: "2px 2px gray",
+              textAlign:"center",
+              fontFamily:"FC.otf",
+              padding: 10,
+              borderRadius: 8,
+              boxShadow: "1px 3px 1px #9E9E9E",
+              marginBottom: 20,
+              marginTop: 20,
+              }}>Need Help Form</h3>
+        <form style = {
+                    {backgroundColor: "#fff",
+                    padding: 10,
+                    margin: 10,
+                    marginBottom: 30,
+                    paddingBottom: 28,
+                    width: 1010,
+                    borderRadius: 8,
+                    boxShadow: "1px 3px 1px #9E9E9E",
+                    
+                    }}onSubmit={formHandler}>
+            <h6>กรุณาแนบรูปภาพประกอบ</h6>
+            <input type="file" className="input" />
+            <button style = {{
+                    textAlign :"center",
+                    backgroundColor:"#F43A6B",
+                    color:"white",
+                    padding: 6,
+                    borderRadius: 8,
+                    boxShadow: "1px 3px 1px #9E9E9E",
+                 
+                  }} type="submit">Upload</button>
+          </form>
 
+        <form style = {
+                    {backgroundColor: "#fff",
+                    padding: 10,
+                    margin: 10,
+                    marginBottom: 30,
+                    paddingBottom: 28,
+                    width: 1010,
+                    borderRadius: 8,
+                    boxShadow: "1px 3px 1px #9E9E9E",
+                    
+                    }} onSubmit={this.handleSubmit}>
+ 
           <div className="input-field">
             <input type="text" id="Name" onChange={this.handleChange} />
-            <label htmlFor="title">ชื่อของคุณ</label>
+            <label htmlFor="title"><a style ={{fontWeight: "bold",color:"black"}}>ชื่อของคุณ</a></label>
           </div>
           <div className="input-field">
             <textarea id="Title"
               onChange={this.handleChange}
               className="materialize-textarea"></textarea>
-            <label htmlFor="content">ชื่อเรื่อง</label>
+            <label htmlFor="content"><a style ={{fontWeight: "bold",color:"black"}}>ชื่อเรื่อง</a></label>
           </div>
           <div className="input-field">
             <textarea
@@ -94,7 +139,7 @@ class Createpost_volunteer extends Component {
               className="materialize-textarea"
               onChange={this.handleChange}
             ></textarea>
-            <label htmlFor="content">คำอธิบาย</label>
+            <label htmlFor="content"><a style ={{fontWeight: "bold",color:"black"}}>คำอธิบาย</a></label>
           </div>
           <div className="input-field">
             <textarea
@@ -102,7 +147,7 @@ class Createpost_volunteer extends Component {
               className="materialize-textarea"
               onChange={this.handleChange}
             ></textarea>
-            <label htmlFor="content">สถานที่</label>
+            <label htmlFor="content"><a style ={{fontWeight: "bold",color:"black"}}>สถานที่</a></label>
           </div>
           <div className="input-field">
             <textarea
@@ -110,7 +155,7 @@ class Createpost_volunteer extends Component {
               className="materialize-textarea"
               onChange={this.handleChange}
             ></textarea>
-            <label htmlFor="content">เบอร์โทรศัพท์</label>
+            <label htmlFor="content"><a style ={{fontWeight: "bold",color:"black"}}>เบอร์โทรศัพท์</a></label>
           </div>
           <div className="input-field">
             <textarea
@@ -118,17 +163,21 @@ class Createpost_volunteer extends Component {
               className="materialize-textarea"
               onChange={this.handleChange}
             ></textarea>
-            <label htmlFor="content">หมายเหตุ</label>
+            <label htmlFor="content"><a style ={{fontWeight: "bold",color:"black"}}>หมายเหตุ</a></label>
           </div>
+
 
           <div className="input-field">
-            <button className="btn pink lighten-1">Submit</button>
+            <button style = {{
+                    textAlign :"center",
+                    backgroundColor:"#F43A6B",
+                    color:"white",
+                    padding: 6,
+                    borderRadius: 8,
+                    boxShadow: "1px 3px 1px #9E9E9E",
+                 
+                  }}>Submit</button>
           </div>
-        </form>
-
-        <form onSubmit={formHandler}>
-          <input type="file" className="input" />
-          <button type="submit">Upload</button>
         </form>
 
       </div>

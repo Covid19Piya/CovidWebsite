@@ -110,16 +110,47 @@ export default class PatientCase extends React.Component {
               borderRadius: 8,
               boxShadow: "1px 3px 1px #9E9E9E",
               
-              }}> ผู้ได้รับผลกระทบ</h3>
+              }}> ผู้ได้รับผลกระทบ</h3> 
                     
           <div className="col s12 m6">
-            <div>
-             <p>อีเมลผู้ต้องการติดต่อ : {this.state.Request}</p>
-             <p>ชื่อผู้ต้องการติดต่อ : {this.state.NameVol}</p>
-             <p>ชื่อผู้ต้องการติดต่อ : {this.state.Status}</p>
-             <img src={this.state.url}/>
-             <button onClick={() => this.changePermision(this.state.Request, "Yes", this.state.Name)}>อนุญาติ</button>
-             <button onClick={() => this.changePermision(this.state.Request, "No", this.state.Name)}>ไม่อนุญาติ</button>
+            <div style = {
+                    {backgroundColor: "#fff",
+                    
+                    padding: 10,
+                    margin: 10,
+                    marginBottom: 30,
+                    paddingBottom: 28,
+                    width: 1020,
+                    borderRadius: 8,
+                    boxShadow: "1px 3px 1px #9E9E9E",
+                    
+                    }}>
+
+             <p><a style ={{fontWeight: "bold",color:"black"}}>อีเมลผู้ต้องการติดต่อ : </a>{this.state.Request}</p>
+             <p><a style ={{fontWeight: "bold",color:"black"}}>ชื่อผู้ต้องการติดต่อ : </a>{this.state.NameVol}</p>
+             <p><a style ={{fontWeight: "bold",color:"black"}}>ชื่อผู้ต้องการติดต่อ : </a>{this.state.Status}</p>
+             <img style={{height:340,width:240}}src={this.state.url}/>
+             <br/>
+             <button style = {{
+                    textAlign :"center",
+                    backgroundColor:"#F43A6B",
+                    color:"white",
+                    padding: 6,
+                    borderRadius: 8,
+                    boxShadow: "1px 3px 1px #9E9E9E",
+                    marginRight: 20,
+                    
+                  }} onClick={() => this.changePermision(this.state.Request, "Yes", this.state.Name)}>อนุญาติ</button>
+             <button style = {{
+                    textAlign :"center",
+                    backgroundColor:"#FF0000",
+                    color:"white",
+                    padding: 6,
+                    borderRadius: 8,
+                    boxShadow: "1px 3px 1px #9E9E9E",
+                    
+                    
+                  }} onClick={() => this.changePermision(this.state.Request, "No", this.state.Name)}>ไม่อนุญาติ</button>
 
             </div>
           </div>
