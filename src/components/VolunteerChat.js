@@ -84,7 +84,7 @@ class Home extends React.Component {
 
         const listData = this.state.userArr;
 
-
+ 
         return (
             <div style={{marginLeft: 250,marginTop: 20}}>
                 <h3 style = {

@@ -1,5 +1,6 @@
 import React from 'react'
 import firebase from 'firebase'
+import { Link } from 'react-router-dom';
 
 class loginp extends React.Component {
 
@@ -49,6 +50,7 @@ class loginp extends React.Component {
       const user = result.user;
       console.log(JSON.stringify(user))
       alert("User is verified")
+      
       // ...
     }).catch((error) => {
       // User couldn't sign in (bad verification code?)
@@ -57,18 +59,35 @@ class loginp extends React.Component {
   }
   render() {
     return (
-      <div className="container">
+      <div className="container" id="loginp">
         <form className="white" onSubmit={this.onSignInSubmit}>
         <h5 className="grey-text text-darken-3">Login</h5>
           <div className="input-field" id="sign-in-button"></div>
           <input type="number" name="mobile" placeholder="กรอกหมายเลขโทรศัพท์" required onChange={this.handleChange}/>
-          <button  className="btn pink lighten-1 z-depth-0" type="submit">Submit</button>
+          <button  style = {{
+                    textAlign :"center",
+                    backgroundColor:"#F43A6B",
+                    color:"white",
+                    padding: 6,
+                    borderRadius: 8,
+                    boxShadow: "1px 3px 1px #9E9E9E",
+                 
+                  }} type="submit">Submit</button>
         </form>
 
         <form className="white" onSubmit={this.onSubmitOTP}>
         <h5 className="grey-text text-darken-3">Enter OTP</h5>
           <input type="number" name="otp" placeholder="กรอกรหัสOTP" required onChange={this.handleChange}/>
-          <button  className="btn pink lighten-1 z-depth-0" type="submit">Submit</button>
+          <button  style = {{
+                    textAlign :"center",
+                    backgroundColor:"#F43A6B",
+                    color:"white",
+                    padding: 6,
+                    borderRadius: 8,
+                    boxShadow: "1px 3px 1px #9E9E9E",
+                 
+                  }} type="submit">Submit</button>
+
         </form>
       </div>
     )

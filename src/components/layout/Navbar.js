@@ -24,8 +24,8 @@ const Navbar = (props) => {
 
   }
   return (
-    <nav className="nav" style = {{backgroundColor:"#FEBBDD"}}>
-      <div className="container">
+    <nav className="Navbar" style = {{backgroundColor:"#FEBBDD"}}>
+      <div className="leftSide">
         <Link style = {{color:"#fff",textShadow: "2px 2px #ff0000",fontWeight:"bold" ,fontSize:"35px"}}to='/' className="left">One for All</Link>
         {links}
 

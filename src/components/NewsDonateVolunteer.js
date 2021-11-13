@@ -134,7 +134,7 @@ export default class test4 extends React.Component {
                                             color: "black",
                                             fontWeight: "bold"
                                         }}>เพิ่มเติม : </a>{d.other}</p>
-                                        <img src={d.url}/>
+                                        <img style={{height:360}}src={d.url}/>
                                       
 
                                     

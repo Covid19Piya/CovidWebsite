@@ -96,37 +96,94 @@ class SignUp extends Component {
 
 
     return (
-      <div className="container">
-        <form className="white" onSubmit={this.handleSubmit}>
-          <h5 className="grey-text text-darken-3">Sign Up</h5>
+      <div className="container" id="signup">
+        <h3 style ={{backgroundColor:"#FEBBDD",
+              fontWeight: "bold",
+              color:"#fff",
+              textShadow: "2px 2px gray",
+              textAlign:"center",
+              fontFamily:"FC.otf",
+              padding: 10,
+              borderRadius: 8,
+              boxShadow: "1px 3px 1px #9E9E9E",
+              marginBottom: 20,
+              marginTop: 20,
+              }}>Sign Up</h3>
+
+          <form style = {
+                    {backgroundColor: "#fff",
+                    padding: 10,
+                    margin: 10,
+                    marginBottom: 30,
+                    paddingBottom: 28,
+                    width: 1010,
+                    borderRadius: 8,
+                    boxShadow: "1px 3px 1px #9E9E9E",
+                    
+                    }} onSubmit={formHandler}>
+          
+          <label className="custom-file-upload">
+          <input type="file" multiple onChange={this.handleChange} />
+          <i className="fa fa-cloud-upload" /> Attach
+        </label>
+          
+
+          <button style = {{
+                    textAlign :"center",
+                    backgroundColor:"#F43A6B",
+                    color:"white",
+                    padding: 6,
+                    borderRadius: 8,
+                    boxShadow: "1px 3px 1px #9E9E9E",
+                 
+                  }} type="submit">Upload</button>
+        </form>
+        <form  style = {
+                    {backgroundColor: "#fff",
+                    padding: 10,
+                    margin: 10,
+                    marginBottom: 30,
+                    paddingBottom: 28,
+                    width: 1010,
+                    borderRadius: 8,
+                    boxShadow: "1px 3px 1px #9E9E9E",
+                    
+                    }}onSubmit={this.handleSubmit}>
+
+
           <div className="input-field">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email"><a style ={{fontWeight: "bold",color:"black"}}>Email</a></label>
             <input type="email" id='email' onChange={this.handleChange} />
           </div>
           <div className="input-field">
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password"><a style ={{fontWeight: "bold",color:"black"}}>Password</a></label>
             <input type="password" id='password' onChange={this.handleChange} />
           </div>
           <div className="input-field">
-            <label htmlFor="firstName">First Name</label>
+            <label htmlFor="firstName"><a style ={{fontWeight: "bold",color:"black"}}>First Name</a></label>
             <input type="text" id='firstName' onChange={this.handleChange} />
           </div>
           <div className="input-field">
-            <label htmlFor="lastName">Last Name</label>
+            <label htmlFor="lastName"><a style ={{fontWeight: "bold",color:"black"}}>Last Name</a></label>
             <input type="text" id='lastName' onChange={this.handleChange} />
           </div>
 
           <div className="input-field">
-            <button className="btn pink lighten-1 z-depth-0">Sign Up</button>
+            <button style = {{
+                    textAlign :"center",
+                    backgroundColor:"#F43A6B",
+                    color:"white",
+                    padding: 6,
+                    borderRadius: 8,
+                    boxShadow: "1px 3px 1px #9E9E9E",
+                 
+                  }}>Sign Up</button>
             <div className="center red-text">
               {authError ? <p>{authError}</p> : null}
             </div>
           </div>
-        </form>
-        <form onSubmit={formHandler}>
-          <input type="file" className="input" />
-          <button type="submit">Upload</button>
-        </form>
+        </form> 
+        
         <hr />
       </div>
     )

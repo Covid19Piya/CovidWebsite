@@ -185,9 +185,35 @@ export default class test4 extends React.Component {
                         fontWeight: "bold"
                       }}>สถานะ : </a>{this.state.Status}</p>
 
-                      <button onClick={() => this.changeState(this.state.PhoneNumber1, "Waiting", this.state.Name, user.email)}>รอ</button>
-                      <button onClick={() => this.changeState(this.state.PhoneNumber1, "On Process", this.state.Name, user.email)}>กำลังดำเนิการ</button>
-                      <button onClick={() => this.changeState(this.state.PhoneNumber1, "Finish", this.state.Name, user.email)}>เสร็จสิ้น</button>
+                      <button style={{
+                        textAlign: "center",
+                        backgroundColor: "#F43A6B",
+                        color: "white",
+                        padding: 6,
+                        borderRadius: 8,
+                        
+                        marginRight: 20
+                      }} onClick={() => this.changeState(this.state.PhoneNumber1, "Waiting", this.state.Name, user.email)}>รอ</button>
+                      
+                      <button style={{
+                        textAlign: "center",
+                        backgroundColor: "#F43A6B",
+                        color: "white",
+                        padding: 6,
+                        borderRadius: 8,
+                        
+                        marginRight: 20
+                      }} onClick={() => this.changeState(this.state.PhoneNumber1, "On Process", this.state.Name, user.email)}>กำลังดำเนิการ</button>
+                      
+                      <button style={{
+                        textAlign: "center",
+                        backgroundColor: "#F43A6B",
+                        color: "white",
+                        padding: 6,
+                        borderRadius: 8,
+                        
+                        marginRight: 20
+                      }} onClick={() => this.changeState(this.state.PhoneNumber1, "Finish", this.state.Name, user.email)}>เสร็จสิ้น</button>
 
                       <Link style={{
                         textAlign: "center",

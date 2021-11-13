@@ -25,7 +25,7 @@ class SignIn extends Component {
     if (auth.uid) {return <Redirect to='/Request' />}
 
     return (
-      <div className="container">
+      <div className="container" id="signin">
         <form className="white" onSubmit={this.handleSubmit}>
           <h5 className="grey-text text-darken-3">Login</h5>
           <div className="input-field">
@@ -37,7 +37,15 @@ class SignIn extends Component {
             <input type="password" id='password' onChange={this.handleChange} />
           </div>
           <div className="input-field">
-            <button className="btn pink lighten-1 z-depth-0">Login</button>
+            <button style = {{
+                    textAlign :"center",
+                    backgroundColor:"#F43A6B",
+                    color:"white",
+                    padding: 6,
+                    borderRadius: 8,
+                    boxShadow: "1px 3px 1px #9E9E9E",
+                 
+                  }}>Login</button>
             <div className="center red-text">
               { authError ? <p>{authError}</p> : null }
             </div>
