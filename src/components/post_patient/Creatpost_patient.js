@@ -24,13 +24,86 @@ class Creatpost_patient extends Component {
   };
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.createProject(this.state);
+    this.storeUser(this.state)
     this.props.history.push("/");
   };
 
-  render() {
+  storeUser() {
     const { auth } = this.props;
     console.log(auth.phoneNumber);
+    this.case
+      .set({
+        Name: this.state.Name,
+        Age: this.state.Age,
+        Help: this.state.Help,
+        PhoneNumber1: auth.phoneNumber,
+        Address: this.state.Address,
+        Status: "waiting",
+        Request: '',
+        Confirm: 'No',
+        gender: this.state.gender
+      })
+      .then((res) => {
+        this.setState({
+          Name: '',
+          Age: '',
+          Help: '',
+          PhoneNumber1: '',
+          Address: '',
+          Status: 'waiting',
+          Request: '',
+          Confirm: 'No',
+          gender: ''
+        });
+      })
+      .catch((err) => {
+        console.log('Error found: ', err);
+        this.setState({
+          isLoading: false,
+        });
+      });
+
+    this.case2
+      .add({
+        Name: this.state.Name,
+        Age: this.state.Age,
+        Help: this.state.Help,
+        PhoneNumber1: auth.phoneNumber,
+        Address: this.state.Address,
+        Status: "waiting",
+        Request: '',
+        Confirm: 'No',
+        gender: this.state.gender
+      })
+      .then((res) => {
+        this.setState({
+          Name: '',
+          Age: '',
+          Help: '',
+          PhoneNumber1: '',
+          Address: '',
+          Status: 'waiting',
+          Request: '',
+          Confirm: 'No',
+          gender: ''
+        });
+      })
+      .catch((err) => {
+        console.log('Error found: ', err);
+        this.setState({
+          isLoading: false,
+        });
+      });
+  }
+
+  render() {
+
+    const { auth } = this.props;
+    console.log(auth.phoneNumber);
+
+    this.case = firebase.firestore().collection('Patient').doc(auth.phoneNumber);
+    this.case2 = firebase.firestore().collection('Patient').doc(auth.phoneNumber).collection("Case");
+
     this.state.id = auth.phoneNumber;
     if (!auth.uid) return <Redirect to="/signin" />;
     return (
