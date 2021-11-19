@@ -60,8 +60,9 @@ class Home extends React.Component {
               </div>
         </div>
        </section>
-       
-       <section class="bg-light" id="about" style={{marginTop:50}}>
+
+       <section style={{marginTop:40,backgroundColor:"#fff",height:200}}>
+       <section style={{marginTop:50}}>
           <div class="container">
             <div class="row">
               <div>
@@ -73,7 +74,8 @@ class Home extends React.Component {
                 และคนที่ได้รับผลกระทบจากโควิด ไม่ว่าจะเป็นจากโดยตรงหรือ ทางอ้อมให้สามารถติดต่อช่วยเหลือกันได้ง่ายยิ่งขึ้น โดยตัดปัญหาการที่จะต้องไปหาคนช่วยเหลือเอง แค่สมัครด้วยเบอร์โทรศัพท์ และโพสความต้องการ</p>
              </div>   
           </div>   
-        </section>   
+        </section>
+        </section>  
 
     
        
@@ -117,7 +119,7 @@ class Home extends React.Component {
         </div>
 
     </div>
-    
+    <section style={{marginTop:40,backgroundColor:"#242424",height:200}}>
     <section className='footer-subscription'>
         <p className='footer-subscription-heading'>
           Join the Adventure newsletter to receive our best vacation deals
@@ -126,7 +128,7 @@ class Home extends React.Component {
           You can unsubscribe at any time.
         </p>
         </section>  
-    
+        </section> 
 </div>
       );
     }
