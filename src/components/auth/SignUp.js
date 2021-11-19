@@ -110,24 +110,18 @@ class SignUp extends Component {
               marginTop: 20,
               }}>Sign Up</h3>
 
-          <form style = {
+        <form style = {
                     {backgroundColor: "#fff",
                     padding: 10,
-                    margin: 10,
+                    margin: 10,              
                     marginBottom: 30,
                     paddingBottom: 28,
-                    width: 1010,
                     borderRadius: 8,
                     boxShadow: "1px 3px 1px #9E9E9E",
                     
-                    }} onSubmit={formHandler}>
+                    }}onSubmit={formHandler}>
           
-          <label className="custom-file-upload">
-          <input type="file" multiple onChange={this.handleChange} />
-          <i className="fa fa-cloud-upload" /> Attach
-        </label>
-          
-
+          <input type="file" className="input" />
           <button style = {{
                     textAlign :"center",
                     backgroundColor:"#F43A6B",

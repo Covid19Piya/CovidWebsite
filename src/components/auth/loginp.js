@@ -58,6 +58,8 @@ class loginp extends React.Component {
     });
   }
   render() {
+    /*const { authError, auth } = this.props;
+    if (auth.uid) {return <Redirect to='/Request' />}*/
     return (
       <div className="container" id="loginp">
         <form className="white" onSubmit={this.onSignInSubmit}>
@@ -86,7 +88,7 @@ class loginp extends React.Component {
                     borderRadius: 8,
                     boxShadow: "1px 3px 1px #9E9E9E",
                  
-                  }} type="submit">Submit</button>
+                  }} type="submit">Submit</button> 
 
         </form>
       </div>
