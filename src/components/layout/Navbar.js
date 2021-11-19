@@ -26,12 +26,8 @@ const Navbar = (props) => {
   return (
     <nav className="Navbar" style = {{backgroundColor:"#FEBBDD"}}>
       <div className="leftSide">
-<<<<<<< HEAD
         <Link style = {{color:"#fff",textShadow: "2px 2px #ff0000",
         fontWeight:"bold" ,fontSize:"35px",textDecoration:"none",marginLeft:30}}to='/' className="left">One for All</Link>
-=======
-        <Link style = {{color:"#fff",textShadow: "2px 2px #ff0000",fontWeight:"bold" ,fontSize:"35px"}}to='/' className="left">One for All eiei</Link>
->>>>>>> 7d1f1b58d399132a88cfec7a8a5ada33a33cbf9f
         {links}
 
       </div> 
