@@ -37,6 +37,7 @@ export default class PatientCase extends React.Component {
 
   }
   getCollection = (querySnapshot) => {
+    console.log("INNNNN")
     const userArr = [];
     querySnapshot.forEach((res) => {
       const { Name, Help, Address, Age, PhoneNumber1, Status, Request, gender, url, NameVol } = res.data();
@@ -76,7 +77,6 @@ export default class PatientCase extends React.Component {
     firebase.firestore().collection("Volunteer").doc(email).collection("Case")
             .get().then(function (querySnapshot) {
                 querySnapshot.forEach(function (doc) {
-
                   if (doc.data().Name == name) {
                         doc.ref.update({
                             Confirm: status
@@ -96,7 +96,7 @@ export default class PatientCase extends React.Component {
 
     this.fireStoreData = firebase.firestore().collection("Patient").doc(phone).collection("Case")
 
-
+    console.log(this.fireStoreData)
     return (
       <div className="dashboard container">
         <div className="row">

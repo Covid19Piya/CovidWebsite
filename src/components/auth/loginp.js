@@ -25,7 +25,7 @@ class loginp extends React.Component {
     e.preventDefault()
    
     this.configureCaptcha()
-    const phoneNumber = "+66" + this.state.mobile
+    const phoneNumber = "+1" + this.state.mobile
     console.log(phoneNumber)
     const appVerifier = window.recaptchaVerifier;
     firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
