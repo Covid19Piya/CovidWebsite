@@ -135,6 +135,9 @@ export default class test4 extends React.Component {
                 textShadow: "2px 2px gray",
                 textAlign: "center",
                 fontFamily: "FC.otf",
+                marginTop:30,
+                marginBottom:30,
+                width:1050,
                 padding: 10,
                 borderRadius: 8,
                 boxShadow: "1px 3px 1px #9E9E9E",
@@ -228,7 +231,7 @@ export default class test4 extends React.Component {
                           state: { name: this.state.PhoneNumber1 }
                         }} >พูดคุยกับผู้ได้รับผลกระทบ
                       </Link>
-                    </div>)
+                    </div>
                 
               
 

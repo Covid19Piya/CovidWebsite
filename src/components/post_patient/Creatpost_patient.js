@@ -39,6 +39,8 @@ class Creatpost_patient extends Component {
               fontWeight: "bold",
               color:"#fff",
               textShadow: "2px 2px gray",
+              marginTop: 30,
+              marginBottom: 30,
               textAlign:"center",
               fontFamily:"FC.otf",
               padding: 10,
@@ -51,6 +53,7 @@ class Creatpost_patient extends Component {
                     {backgroundColor: "#fff",
                     padding: 10,
                     margin: 10,
+              
                     marginBottom: 30,
                     paddingBottom: 28,
                     width: 1010,
@@ -58,6 +61,7 @@ class Creatpost_patient extends Component {
                     boxShadow: "1px 3px 1px #9E9E9E",
                     
                     }} onSubmit={this.handleSubmit}>
+          
       
           <div className="input-field">
             <input type="text" id='Name' onChange={this.handleChange} />

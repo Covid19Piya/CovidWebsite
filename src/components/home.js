@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import './home.css';
 
 class Home extends React.Component {
     render() {
@@ -69,88 +69,46 @@ class Home extends React.Component {
                </div>
               </div>
              <div class="row">
-                <p class="mt-4 mb-5"> เว็บไซต์นี้ถูกสร้างขึ้นมาเพื่อเป็นศูนย์กลางระหว่าง อาสาสมัครที่ต้องการช่วยเหลือคนที่ได้รับผลกระทบจากโควิค 
-                และคนที่ได้รับผลกระทบจากโควิด ไม่ว่าจะเป็นจากโดยตรงหรือ ทางอ้อมให้สามารถติดต่อช่วยเหลือกันได้ง่ายยิ่งขึ้น</p>
+                <p > เว็บไซต์นี้ถูกสร้างขึ้นมาเพื่อเป็นศูนย์กลางระหว่าง อาสาสมัครที่ต้องการช่วยเหลือคนที่ได้รับผลกระทบจากโควิค 
+                และคนที่ได้รับผลกระทบจากโควิด ไม่ว่าจะเป็นจากโดยตรงหรือ ทางอ้อมให้สามารถติดต่อช่วยเหลือกันได้ง่ายยิ่งขึ้น โดยตัดปัญหาการที่จะต้องไปหาคนช่วยเหลือเอง แค่สมัครด้วยเบอร์โทรศัพท์ และโพสความต้องการ</p>
              </div>   
           </div>   
         </section>   
 
     
-    <section class="bg-light mt-5" id="tourist">    
-     <div class="container">
-      <div class="row text-center">
-        <div class="col-sm-12 col-md-12 mb-4">
-            <h3 class="text-center mt-4 text-secondary">Member</h3>
-         </div>
-        <div class="col-md-4">
-          <div class="testimonial mb-5">
-           <div class="avatar mx-auto">
-            <img src="img/kampu.jpg" class="rounded-circle z-depth-1 img-fluid"/>
-          </div>
-          <h4 class="font-weight-bold dark-grey-text mt-4">Thapanapong Sinprommat</h4>
-          <h6 class="font-weight-bold blue-text my-3">Scummaster</h6>
-          <p class="font-weight-normal dark-grey-text">
-          Thapanapong Sinprommat 6210742257</p>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="testimonial mb-5">
-          <div class="avatar mx-auto">
-            <img src="img/poom.jpg" class="rounded-circle z-depth-1 img-fluid"/>
-          </div>
-          <h4 class="font-weight-bold dark-grey-text mt-4">Jirawat Chaichompu</h4>
-          <h6 class="font-weight-bold blue-text my-3">Developer</h6>
-          <p class="font-weight-normal dark-grey-text">Jirawat Chaichompu 6210742075</p>
+       
+     <div style={{}}>
+        <h3 className="header">Member</h3>
+     </div>
+     <div class="container-picture">
+        <div class="picture-item">        
+            <img src="/img/kampu.jpg" />
+            <h4>Thapanapong Sinprommat</h4>
         </div>
 
-      </div>
-      <div class="col-md-4">
-        <div class="testimonial mb-5">
-          <div class="avatar mx-auto">
-            <img src="img/pon.jpg" class="rounded-circle z-depth-1 img-fluid"/>
-          </div>
-          <h4 class="font-weight-bold dark-grey-text mt-4">Nattapon Khajornkasirat</h4>
-          <h6 class="font-weight-bold blue-text my-3">Developer</h6>
-          <p class="font-weight-normal dark-grey-text">Nattapon Khajornkasirat 6210742513</p>
+        <div className="picture-item">  
+            <img src="img/poom.jpg" />
+            <h4 >Jirawat Chaichompu</h4>
+        </div>  
+
+        <div className="picture-item">
+            <img src="img/pon.jpg" />
+          <h4 >Nattapon Khajornkasirat</h4>
         </div>
 
-      </div>
-      <div class="col-md-4">
-        <div class="testimonial mb-5">
-          <div class="avatar mx-auto">
-            <img src="img/aom.jpg" class="rounded-circle z-depth-1 img-fluid"/>
-          </div>
-          <h4 class="font-weight-bold dark-grey-text mt-4">Sahassawat Thipdee</h4>
-          <h6 class="font-weight-bold blue-text my-3">Developer</h6>
-          <p class="font-weight-normal dark-grey-text">Sahassawat Thipdee 6210742265</p>
+        <div className="picture-item">
+            <img src="img/aom.jpg" />
+          <h4 >Sahassawat Thipdee</h4>
         </div>
 
-      </div>
-      <div class="col-md-4">
-        <div class="testimonial mb-5">
-          <div class="avatar mx-auto">
-            <img src="img/peter.jpg" class="rounded-circle z-depth-1 img-fluid"/>
-          </div>
-          <h4 class="font-weight-bold dark-grey-text mt-4">chonlakorn panchaviwatkul</h4>
-          <h6 class="font-weight-bold blue-text my-3">Developer</h6>
-          <p class="font-weight-normal dark-grey-text">
-          chonlakorn panchaviwatkul 6210742216</p>
+        <div className="picture-item">
+            <img src="img/peter.jpg" />
+          <h4 >chonlakorn panchaviwatkul</h4>
         </div>
-        </div>
-      </div>
+
     </div> 
-   </section>
-
-   <section class="bg-dark">
-             <div class="container">
-               <div style={{height:100}}>                
-                  <h6 style={{color:"white"}}>Copyright @ One for All 2021</h6>  
-               </div>
-             </div>    
-          </section>
-   
-   </div>
+    
+</div>
       );
     }
   }

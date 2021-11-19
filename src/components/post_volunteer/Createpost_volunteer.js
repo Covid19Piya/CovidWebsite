@@ -83,6 +83,9 @@ class Createpost_volunteer extends Component {
               fontFamily:"FC.otf",
               padding: 10,
               borderRadius: 8,
+              marginTop:30,
+              marginBottom:30,
+              width:1050,
               boxShadow: "1px 3px 1px #9E9E9E",
               marginBottom: 20,
               marginTop: 20,
@@ -90,10 +93,9 @@ class Createpost_volunteer extends Component {
         <form style = {
                     {backgroundColor: "#fff",
                     padding: 10,
-                    margin: 10,
+                    margin: 10,              
                     marginBottom: 30,
                     paddingBottom: 28,
-                    width: 1010,
                     borderRadius: 8,
                     boxShadow: "1px 3px 1px #9E9E9E",
                     
