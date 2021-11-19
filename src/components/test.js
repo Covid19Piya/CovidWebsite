@@ -109,7 +109,7 @@ export default class FindPatient extends React.Component {
                       state: { phoneNumber: d.PhoneNumber1}
                     }} >ต้องการติดต่อ
                   </Link>
-                  
+                   
                   </div>
                 </div>)
               })}

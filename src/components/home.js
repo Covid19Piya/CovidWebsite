@@ -8,7 +8,7 @@ class Home extends React.Component {
         <div>
          <section class="">
               <div  class="condiv" >
-                <img style={{borderRadius:"10%"}}class="img-responsive" src="https://static.thairath.co.th/media/dFQROr7oWzulq5Fa4VnLIoPobFjJeRo6JQXfLpjUaN7Cjs1T05vZyRUcqao4CBGl3C4.webp" alt=""/>
+                <img style={{borderRadius:"10%"}} class="img-responsive" src="https://static.thairath.co.th/media/dFQROr7oWzulq5Fa4VnLIoPobFjJeRo6JQXfLpjUaN7Cjs1T05vZyRUcqao4CBGl3C4.webp" alt=""/>
               </div>
         </section>   
         
@@ -86,7 +86,7 @@ class Home extends React.Component {
         <div class="picture-item">        
             <img src="/img/kampu.jpg" />
             <h6 className="font">Thapanapong Sinprommat</h6>
-            <h6 style={{fontWeight:"bold",color:"blue",margin:10,textAlign:"center"}}>Scummaster</h6>
+            <h6 style={{fontWeight:"bold",color:"blue",margin:10,textAlign:"center"}}>Scrummaster</h6>
             <p className="font2">6210742257</p>
         </div>
 
@@ -119,13 +119,16 @@ class Home extends React.Component {
         </div>
 
     </div>
-    <section style={{marginTop:40,backgroundColor:"#242424",height:200}}>
+    <section style={{marginTop:40,backgroundColor:"#242424",height:220}}>
     <section className='footer-subscription'>
         <p className='footer-subscription-heading'>
-          Join the Adventure newsletter to receive our best vacation deals
+          Join us to be part of helping people or get help from people.
         </p>
         <p className='footer-subscription-text'>
-          You can unsubscribe at any time.
+          You can contact at any time.
+        </p>
+        <p className='footer-subscription-text'>
+          copyright @ by one4all.thammasat.com 2021
         </p>
         </section>  
         </section> 

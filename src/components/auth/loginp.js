@@ -1,6 +1,7 @@
 import React from 'react'
 import firebase from 'firebase'
 import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom'
 
 class loginp extends React.Component {
 
@@ -50,7 +51,7 @@ class loginp extends React.Component {
       const user = result.user;
       console.log(JSON.stringify(user))
       alert("User is verified")
-      
+
       // ...
     }).catch((error) => {
       // User couldn't sign in (bad verification code?)
@@ -88,7 +89,7 @@ class loginp extends React.Component {
                     borderRadius: 8,
                     boxShadow: "1px 3px 1px #9E9E9E",
                  
-                  }} type="submit">Submit</button> 
+                  }} type="submit">Submit</button>
 
         </form>
       </div>
