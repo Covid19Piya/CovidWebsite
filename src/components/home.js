@@ -8,7 +8,7 @@ class Home extends React.Component {
         <div>
          <section class="">
               <div  class="condiv" >
-                <img style={{borderRadius:"10%"}} class="img-responsive" src="https://static.thairath.co.th/media/dFQROr7oWzulq5Fa4VnLIoPobFjJeRo6JQXfLpjUaN7Cjs1T05vZyRUcqao4CBGl3C4.webp" alt=""/>
+                <img style={{alignItems: 'center',borderRadius:"10%"}} class="img-responsive" src="https://static.thairath.co.th/media/dFQROr7oWzulq5Fa4VnLIoPobFjJeRo6JQXfLpjUaN7Cjs1T05vZyRUcqao4CBGl3C4.webp" alt=""/>
               </div>
         </section>   
         
