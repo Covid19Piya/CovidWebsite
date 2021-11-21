@@ -145,7 +145,7 @@ export default class test3 extends React.Component {
               boxShadow: "1px 3px 1px #9E9E9E",
               width:1030,
 
-              }}>ผู้ได้รับผลกระทบในการดูเเลของคุณ</h3>
+              }}>เคสของคุณ</h3>
               {listData.map(function (d, idx) {
                  
                 
