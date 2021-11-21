@@ -113,7 +113,7 @@ export default class PatientCase extends React.Component {
               borderRadius: 8,
               boxShadow: "1px 3px 1px #9E9E9E",
               
-              }}> ผู้ได้รับผลกระทบ</h3> 
+              }}> สถานะความช่วยเหลือ</h3> 
                     
           <div className="col s12 m6">
             <div style = {

@@ -88,7 +88,7 @@ export default class test4 extends React.Component {
                                 boxShadow: "1px 3px 1px #9E9E9E",
 
 
-                            }}>ข้อมูลผู้ได้รับผลกระทบ</h3>
+                            }}>ข่าวสารการแจกของ</h3>
                             {listData.map(function (d, idx) {
 
 

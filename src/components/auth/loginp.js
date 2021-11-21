@@ -43,6 +43,12 @@ class loginp extends React.Component {
         });
   }
   onSubmitOTP = (e) =>{
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        return <Redirect to='/Home' />
+
+      }
+    })
     e.preventDefault()
     const code = this.state.otp
     console.log(code)
@@ -52,15 +58,17 @@ class loginp extends React.Component {
       console.log(JSON.stringify(user))
       alert("User is verified")
 
+      
       // ...
-    }).catch((error) => {
+    }).catch((error) => { 
       // User couldn't sign in (bad verification code?)
       // ...
     });
+    
   }
   render() {
-    /*const { authError, auth } = this.props;
-    if (auth.uid) {return <Redirect to='/Request' />}*/
+    
+
     return (
       <div className="container" id="loginp">
         <form className="white" onSubmit={this.onSignInSubmit}>
@@ -90,7 +98,18 @@ class loginp extends React.Component {
                     boxShadow: "1px 3px 1px #9E9E9E",
                  
                   }} type="submit">Submit</button>
-
+                  <Link style = {{
+                    textAlign :"center",
+                    backgroundColor:"#F43A6B",
+                    color:"white",
+                    padding: 6,
+                    borderRadius: 8,
+                    boxShadow: "1px 3px 1px #9E9E9E",
+                  }}
+                    to={{
+                      pathname: '/Home',
+                    }} >Finish
+                  </Link>
         </form>
       </div>
     )

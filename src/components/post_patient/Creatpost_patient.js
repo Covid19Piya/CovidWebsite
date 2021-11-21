@@ -121,7 +121,7 @@ class Creatpost_patient extends Component {
               boxShadow: "1px 3px 1px #9E9E9E",
               width:1030,
 
-              }}>Need Help Form</h3>
+              }}>โพสขอความช่วยเหลือ</h3>
         <form style = {
                     {backgroundColor: "#fff",
                     padding: 10,

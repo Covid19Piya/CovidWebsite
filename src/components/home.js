@@ -20,6 +20,8 @@ class Home extends React.Component {
                </div>
               </div>
 
+         
+
               <div class="row">
                  <div class="col-sm-4 mb-5">
                     <div class="card mt-4">
@@ -35,7 +37,7 @@ class Home extends React.Component {
                  </div>
                  <div class="col-sm-4 mb-6">
                     <div class="card mt-4">
-                       <img  src="Img/p3.jpeg" alt=""/>
+                       <img src="Img/p3.jpeg" alt=""/>
                        <div class="card-body">
                           <h4 class="card-title text-secondary">Login Volunteer</h4>
                           <p class="card-text text-secondary">Login เข้าสู่ระบบอาสาสมัคร</p>

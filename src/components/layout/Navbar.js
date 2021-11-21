@@ -29,7 +29,7 @@ const Navbar = (props) => {
         <Link style = {{color:"#fff",textShadow: "2px 2px #ff0000",
         fontWeight:"bold" ,fontSize:"35px",textDecoration:"none",marginLeft:30}}to='/' className="left">One for All</Link>
         {links}
-
+ 
       </div> 
     </nav>
   )
